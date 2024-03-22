@@ -9,16 +9,17 @@ const Navegador = () => {
   return (
     <Navbar expand="lg" className="navStyle">
       <Container>
-      <Navbar.Brand className='brandLogo' href="#home">
-  <img
-    src={logo2}
-    width="85"
-    height="80" 
-    className="d-inline-block align-top"
-    alt="Logo HTMLift GYM"
-  />
+        <Navbar.Brand className='brandLogo' href="#home">
+          <img
+            src={logo2}
+            width="85"
+            height="80"
+            className="d-inline-block align-top"
+            alt="Logo HTMLift GYM"
+          />
 
-</Navbar.Brand>
+        </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
