@@ -1,0 +1,24 @@
+.navStyle {
+  background-color: #000000;
+  font-size: 1.2rem;
+}
+
+
+.navLink {
+  position: relative;
+  left: 20rem; 
+  color: #14ffec !important;
+}
+
+.brandLogo img {
+  display: flex;
+  align-items: center;
+  filter: invert(100%);
+}
+
+/* .brandName {
+  color: white; 
+  margin-left: 12px; 
+  align-self: center;
+  font-size: 2rem;
+} */
