@@ -1,27 +1,23 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-
-}
-
 .contenedorFooter {
-    width: 100%; 
-    margin: 0 auto;
-    padding: 0; 
-    background-color: #212121;
-    color: #14FFEC;
+  background-color: #000000;
+  font-size: 1rem;
+  color: #14ffec;
 }
 
-
-.listSocials {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+.icono-blanco {
+  color: white;
 }
 
 .listSocials li a {
-    text-decoration: none;
-    color: inherit; 
+  color: #000;
+  text-decoration: none;
+  
+}
+
+.icono-blanco:hover {
+  color: #14ffec;
+}
+
+.textTitle {
+  font-size: 1.3rem;
 }
