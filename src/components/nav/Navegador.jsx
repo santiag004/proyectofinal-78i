@@ -1,19 +1,20 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Button } from 'react-bootstrap';
+import {Container, Nav, Navbar, Button} from 'react-bootstrap';
 import './navbarStyle.css'
-import logo2 from '../../assets/logo2.png'
+import logo from '../../assets/logo.jpg'
+import { useNavigate } from 'react-router-dom';
 
 const Navegador = () => {
+
+const navigate = useNavigate()
+
   return (
     <Navbar expand="lg" className="navStyle">
       <Container>
         <Navbar.Brand className='brandLogo' href="#home">
           <img
-            src={logo2}
-            width="85"
-            height="80"
+            src={logo}
+            width="100"
+            height="90"
             className="d-inline-block align-top"
             alt="Logo HTMLift GYM"
           />

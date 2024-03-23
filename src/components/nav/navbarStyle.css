@@ -13,12 +13,6 @@
 .brandLogo img {
   display: flex;
   align-items: center;
-  filter: invert(100%);
 }
 
-/* .brandName {
-  color: white; 
-  margin-left: 12px; 
-  align-self: center;
-  font-size: 2rem;
-} */
+
