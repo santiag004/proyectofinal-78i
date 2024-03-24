@@ -29,7 +29,7 @@ const navigate = useNavigate()
             <Nav.Link className='navLink mx-5' href="#aboutus">About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Button className='mx-5' variant='outline-light'>Login</Button>
+        <Button className='loginButton mx-5' variant='outline-dark'>Login</Button>
       </Container>
     </Navbar>
   );
