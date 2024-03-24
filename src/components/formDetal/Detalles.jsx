@@ -2,22 +2,32 @@ import React from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import emailjs from 'emailjs-com';
 import './detalleStyle.css'
+import Swal from 'sweetalert2';
 
 const Detalles = () => {
 
     const enviarEmail = async (e) => { 
         e.preventDefault();
         try {
-            emailjs.init("ezXhsZos_l1IZzd5w")
-            
-            const result = await emailjs.sendForm('service_bxoj5ea', 'template_wco04c8', e.target);
-            console.log(result, "resultado enviar");
-            
-            alert('Mensaje enviado con éxito!');
-        } catch (error) {
-            
-            alert('Error al enviar el mensaje, intenta de nuevo.');
-        }
+          emailjs.init("ezXhsZos_l1IZzd5w")
+          
+          const result = await emailjs.sendForm('service_bxoj5ea', 'template_wco04c8', e.target);
+          console.log(result, "resultado enviar");
+          
+          Swal.fire({
+              icon: 'success',
+              title: '¡Mensaje enviado con éxito!',
+              showConfirmButton: false,
+              timer: 1500
+          });
+      } catch (error) {
+          
+          Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Error al enviar el mensaje, intenta de nuevo.',
+          });
+      }
     }
 
 
