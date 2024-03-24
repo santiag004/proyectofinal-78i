@@ -1,6 +1,6 @@
 .contenedorFooter {
   background-color: #000000;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #14ffec;
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -17,32 +17,7 @@
 }
 
 .icono-blanco:hover {
-  color: #14ffec; 
-  text-shadow: 0 5px 10px #14ffec, 0 10px 20px #14ffec, 0 15px 30px #14ffec, 0 20px 40px #14ffec;
-}
-
-
-
-
-
-
-
-
-
-
-
-/* .icono-blanco {
-  color: white;
-}
-
-.icono-blanco:hover {
-  
   color: #14ffec;
-  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec;
-  cursor: pointer;
-  
-} */
-
-.textTitle {
-  font-size: 1.3rem;
+  text-shadow: 0 5px 10px #14ffec, 0 10px 20px #14ffec, 0 15px 30px #14ffec,
+    0 20px 40px #14ffec;
 }
