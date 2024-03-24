@@ -1,0 +1,18 @@
+{
+    "usuarios":[
+        {
+            "id": "1",
+            "nombre": "Javier",
+            "apellido": "Rodriguez",
+            "email": "1@1.com",
+            "contraseña": "123"
+        },
+        {
+            "id": "1",
+            "nombre": "Marto",
+            "apellido": "Garzon",
+            "email": "2@2.com",
+            "contraseña": "123"
+        }
+    ]
+}
