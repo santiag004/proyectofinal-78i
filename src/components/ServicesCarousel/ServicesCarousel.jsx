@@ -5,14 +5,14 @@ const ServicesCarousel = () => {
     return (
         <>
             <Carousel indicators={false} controls={false} className="services-img" fade>
-                <Carousel.Item interval={1400}>
-                    <img src="https://picsum.photos/500/700?random=1" className="img-fluid" />
+                <Carousel.Item interval={1800}>
+                    <img src="public\images\home\services-photos\ph1.jpg" className="img-fluid" />
                 </Carousel.Item>
-                <Carousel.Item interval={1400}>
-                    <img src="https://picsum.photos/500/700?random=2" className="img-fluid" />
+                <Carousel.Item interval={1800}>
+                    <img src="public\images\home\services-photos\ph2.jpg" className="img-fluid" />
                 </Carousel.Item>
-                <Carousel.Item interval={1400}>
-                    <img src="https://picsum.photos/500/700?random=3" className="img-fluid" />
+                <Carousel.Item interval={1800}>
+                    <img src="public\images\home\services-photos\ph3.jpg" className="img-fluid" />
                 </Carousel.Item>
             </Carousel>
         </>
