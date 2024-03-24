@@ -1,7 +1,7 @@
 .contenedorForm {
   background-color: #000;
   color: #14ffec;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec;
   border-radius: 8px;
   padding: 20px;
 }
