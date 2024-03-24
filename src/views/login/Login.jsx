@@ -1,19 +1,55 @@
-import React from "react";
+import { React, useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
 import '../../css/login.css'
 import img from "../../assets/img/img.jpg";
 import {Link, useNavigate} from 'react-router-dom'
+import {UsuariosProvider} from "../../context/UsuariosContext";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
 
 
   const navigate = useNavigate()
+  const {usuarios} = useContext(UsuariosProvider)
+  console.log(usuarios, "usuarios desde el login")
 
   const registro = (e) =>{
     navigate('/registro')
+  }
+
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    try {
+      const user = usuarios.find((user) => user.email === email && user.password === password)
+      if (user){
+        Swal.fire({
+          title: "Bienvenido",
+          text: "Sesion iniciada con exito",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+        })
+        localStorage.setItem("user", JSON.stringify(user))
+        navigate("/")
+      }
+      else{
+        Swal.fire({
+          title: "Error",
+          text: "Usuario o contraseña incorrectos",
+          icon: "error",
+          confirmButtonText: "Aceptar",
+        })
+      }
+    } catch (error){
+      console.log(error)
+    }
+
   }
 
 
@@ -22,15 +58,25 @@ const Login = () => {
       <Container >
       <Row className="justify-content-center align-items-center">
         <Col md={6}> 
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3">
               <Form.Label className="colorPalabras">Correo Electrónico</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" className="" />
+              <Form.Control type="email"
+                placeholder="Enter email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </Form.Group>
 
-            <Form.Group className="mb-3 " controlId="formBasicPassword">
+            <Form.Group className="mb-3 ">
               <Form.Label className="colorPalabras">Contraseña</Form.Label>
-              <Form.Control type="password" placeholder="Password" className=""/>
+              <Form.Control type="password"
+                placeholder="Password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                />
             </Form.Group>
 
             <Button variant="success" type="submit">

@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from 'react-router-dom';
-
+import { Button } from 'react-bootstrap';
+import { UsuariosProvider } from '../../context/UsuariosContext';
 
 export const Navegador = () => {
 
 
     const navigate = useNavigate()
+
+  const{logOut} = useContext(UsuariosProvider)
+
+
+    const user = JSON.parse(localStorage.getItem("user"))
 
 
   return (
@@ -21,9 +27,15 @@ export const Navegador = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
-            <Nav.Link onClick={() => navigate("/login")}>Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+
+      {user ? (
+        <Button variant='danger' onClick={() => logOut()} >Cerrar Sesion</Button>
+      ) : (
+        <Button variant='success' onClick={() => navigate("/login")}>Iniciar Sesion</Button>
+      )}
+
       </Container>
     </Navbar>
 

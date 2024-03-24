@@ -2,6 +2,7 @@
 import Navegador from './components/navegador/Navegador'
 import Rutas from './components/rutas/Rutas'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import UsuariosContext from './context/UsuariosContext'
 
 
 function App() {
@@ -12,8 +13,10 @@ function App() {
 
   return (
     <>
-      <Navegador/>
+      <UsuariosContext>
+        <Navegador/>
         <Rutas/>
+      </UsuariosContext>
     </>
   )
 }
