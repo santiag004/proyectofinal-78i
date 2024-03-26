@@ -1,13 +1,13 @@
 import axios from "axios";
 import { createContext, useState, useEffect } from "react";
 
-export const UserContextProvaider = createContext();
+export const UserContextProvider = createContext();
 
 const ContextUsers = ({ children }) => {
-  
   const [users, setUsers] = useState([]);
+  const [pageNumber, setPageNumber] = useState(0);
 
-  //funcion para traer usuarios
+  // Función para traer usuarios
   const getUsers = async () => {
     try {
       let response = await axios.get("http://localhost:8080/usuarios");
@@ -16,19 +16,9 @@ const ContextUsers = ({ children }) => {
       console.log(e);
     }
   };
-  
-  //funcion para agregar un nuevo usuario
-  // const addUser = async (user) => {
-  //   try {
-  //     let response = await axios.post("https://localhost:8080/usuario", user);
-  //     setUsers([...users, response.data]);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
 
-  //funcion para editar un  usuario
-  const updateUser = async (user) => {
+  // Función para editar un usuario
+  const updateUser = async (id, user) => {
     try {
       await axios.put(`http://localhost:8080/usuario/${id}`, user);
       await getUsers();
@@ -37,26 +27,32 @@ const ContextUsers = ({ children }) => {
     }
   };
 
-  //funcion para eliminar un usuario
-const deleteUser= async (id)=>{
+  // Función para eliminar un usuario
+  const deleteUser = async (id) => {
     try {
-        await  axios.delete(`http://localhost:8080/usuario/${id}`);
-        await getUsers()
+      await axios.delete(`http://localhost:8080/usuario/${id}`);
+      await getUsers();
     } catch (e) {
-        console.log(e)
+      console.log(e);
     }
-}
+  };
 
   useEffect(() => {
     getUsers();
-    // addUser();
+    // addUser();  // Asegúrate de descomentar esta línea si necesitas ejecutarla
   }, []);
 
+  const startIndex = pageNumber * 10;
+  const endIndex = startIndex + 10;
+
   return (
-    <UserContextProvaider.Provider value={{users,getUsers,deleteUser,updateUser}}>
-        {children}
-    </UserContextProvaider.Provider>
+    <UserContextProvider.Provider
+      value={{ users, getUsers, deleteUser, updateUser, pageNumber, setPageNumber }}
+    >
+      {children}
+    </UserContextProvider.Provider>
   );
 };
 
 export default ContextUsers;
+

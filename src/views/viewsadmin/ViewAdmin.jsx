@@ -1,9 +1,9 @@
-import UserTable from "../../components/userTable/UserTable";
+import Pagination from "../../components/pagination/Pagination"
 const ViewAdmin = () => {
   return (
     <>
     <h1>View Admin</h1>
-    <UserTable/>
+    <Pagination/>
     </>
   )
 }
