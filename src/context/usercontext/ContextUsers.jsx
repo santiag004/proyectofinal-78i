@@ -18,7 +18,7 @@ const ContextUsers = ({ children }) => {
   };
 
   // Función para editar un usuario
-  const updateUser = async (id, user) => {
+  const upDateUser = async (id, user) => {
     try {
       await axios.put(`http://localhost:8080/usuario/${id}`, user);
       await getUsers();
@@ -50,7 +50,7 @@ const ContextUsers = ({ children }) => {
         users,
         getUsers,
         deleteUser,
-        updateUser,
+        upDateUser,
         pageNumber,
         setPageNumber,
       }}>

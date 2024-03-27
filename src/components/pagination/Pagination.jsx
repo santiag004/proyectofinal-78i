@@ -6,7 +6,7 @@ import Registro from "../registro/Registro"
 function Pagination() {
   const { users, pageNumber, setPageNumber, deleteUser } = useContext(UserContextProvider);
   
-  const [userToEdit, setUserToEdit] = useState();
+  const [userToEdit, setUserToEdit] = useState(null);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   
