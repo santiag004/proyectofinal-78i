@@ -46,13 +46,13 @@ const UserTable = () => {
                 <td>{u.isAdmin ? "Si" : "No"}</td>
                 <td>
                   <Button
-                    variant="primary"
+                    variant="outline-primary"
                     onClick={() => handleEdit(u)}
                   >
                     Editar
                   </Button>
                   <Button
-                    variant="danger"
+                    variant="outline-danger"
                     onClick={() => deleteUser(u.id)}
                   >
                     Eliminar

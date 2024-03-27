@@ -30,7 +30,7 @@ const ContextUsers = ({ children }) => {
   // Función para eliminar un usuario
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/usuario/${id}`);
+      await axios.delete(`http://localhost:8080/usuarios/${id}`);
       await getUsers();
     } catch (e) {
       console.log(e);
@@ -39,7 +39,6 @@ const ContextUsers = ({ children }) => {
 
   useEffect(() => {
     getUsers();
-    // addUser();  // Asegúrate de descomentar esta línea si necesitas ejecutarla
   }, []);
 
   const startIndex = pageNumber * 10;
@@ -47,12 +46,17 @@ const ContextUsers = ({ children }) => {
 
   return (
     <UserContextProvider.Provider
-      value={{ users, getUsers, deleteUser, updateUser, pageNumber, setPageNumber }}
-    >
+      value={{
+        users,
+        getUsers,
+        deleteUser,
+        updateUser,
+        pageNumber,
+        setPageNumber,
+      }}>
       {children}
     </UserContextProvider.Provider>
   );
 };
 
 export default ContextUsers;
-

@@ -1,131 +1,18 @@
 {
-    "usuarios": [
-      {
-        "Nombre": "Juan",
-        "Apellido": "Perez",
-        "Email": "juan@example.com",
-        "Teléfono": "1234567890"
-      },
-      {
-        "Nombre": "María",
-        "Apellido": "González",
-        "Email": "maria@example.com",
-        "Teléfono": "2345678901"
-      },
-      {
-        "Nombre": "Carlos",
-        "Apellido": "Rodríguez",
-        "Email": "carlos@example.com",
-        "Teléfono": "3456789012"
-      },
-      {
-        "Nombre": "Ana",
-        "Apellido": "López",
-        "Email": "ana@example.com",
-        "Teléfono": "4567890123"
-      },
-      {
-        "Nombre": "Pedro",
-        "Apellido": "Martínez",
-        "Email": "pedro@example.com",
-        "Teléfono": "5678901234"
-      },
-      {
-        "Nombre": "Laura",
-        "Apellido": "Hernández",
-        "Email": "laura@example.com",
-        "Teléfono": "6789012345"
-      },
-      {
-        "Nombre": "David",
-        "Apellido": "Sánchez",
-        "Email": "david@example.com",
-        "Teléfono": "7890123456"
-      },
-      {
-        "Nombre": "Paula",
-        "Apellido": "Ramírez",
-        "Email": "paula@example.com",
-        "Teléfono": "8901234567"
-      },
-      {
-        "Nombre": "Javier",
-        "Apellido": "Torres",
-        "Email": "javier@example.com",
-        "Teléfono": "9012345678"
-      },
-      {
-        "Nombre": "Elena",
-        "Apellido": "Díaz",
-        "Email": "elena@example.com",
-        "Teléfono": "0123456789"
-      },
-      {
-        "Nombre": "Alejandro",
-        "Apellido": "Gomez",
-        "Email": "alejandro@example.com",
-        "Teléfono": "3210987654"
-      },
-      {
-        "Nombre": "Sara",
-        "Apellido": "Pereira",
-        "Email": "sara@example.com",
-        "Teléfono": "4321098765"
-      },
-      {
-        "Nombre": "Daniel",
-        "Apellido": "Fernández",
-        "Email": "daniel@example.com",
-        "Teléfono": "5432109876"
-      },
-      {
-        "Nombre": "Luisa",
-        "Apellido": "Alvarez",
-        "Email": "luisa@example.com",
-        "Teléfono": "6543210987"
-      },
-      {
-        "Nombre": "Miguel",
-        "Apellido": "Jiménez",
-        "Email": "miguel@example.com",
-        "Teléfono": "7654321098"
-      },
-      {
-        "Nombre": "Carmen",
-        "Apellido": "Ruiz",
-        "Email": "carmen@example.com",
-        "Teléfono": "8765432109"
-      },
-      {
-        "Nombre": "Rosa",
-        "Apellido": "Morales",
-        "Email": "rosa@example.com",
-        "Teléfono": "9876543210"
-      },
-      {
-        "Nombre": "Francisco",
-        "Apellido": "Ortega",
-        "Email": "francisco@example.com",
-        "Teléfono": "0987654321"
-      },
-      {
-        "Nombre": "Isabel",
-        "Apellido": "Reyes",
-        "Email": "isabel@example.com",
-        "Teléfono": "9876543210"
-      },
-      {
-        "Nombre": "Manuel",
-        "Apellido": "Molina",
-        "Email": "manuel@example.com",
-        "Teléfono": "8765432109"
-      },
-      {
-        "Nombre": "Rocío",
-        "Apellido": "Serrano",
-        "Email": "rocio@example.com",
-        "Teléfono": "7654321098"
+  "usuarios": [
+    {
+      "id": "2",
+      "nombre": "María",
+      "apellido": "González",
+      "email": "maria@example.com",
+      "telefono": "2345678901"
+    },
+    {
+        "id": "1",
+        "nombre": "Bruno",
+        "apellido": "González",
+        "email": "maria@example.com",
+        "telefono": "2345678901"
       }
-    ]
-  }
-  
+  ]
+}
