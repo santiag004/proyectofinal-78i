@@ -8,8 +8,6 @@ import Swal from "sweetalert2";
 const Registro = ({ userToEdit, handleClose }) => {
   const { addUser, upDateUser } = useContext(UserContextProvider);
 
-  console.log(userToEdit, "usuario a editar");
-
   const [usuario, setUsuario] = useState({
     id: userToEdit ? userToEdit.id : uuidv4(),
     nombre: userToEdit ? userToEdit.nombre : "",
@@ -19,10 +17,10 @@ const Registro = ({ userToEdit, handleClose }) => {
     password: "",
     isAdmin: false,
   });
+ 
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target; // <--- destructuramos el evento para obtener el name, value, type y checked
-    // setUsuario({ ...usuario, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
       setUsuario({ ...usuario, [name]: checked });
     } else {
@@ -34,7 +32,7 @@ const Registro = ({ userToEdit, handleClose }) => {
     e.preventDefault();
 
     if (userToEdit) {
-      upDateUser(usuario);
+      upDateUser(usuario);;
       Swal.fire({
         title: "Usuario Editado",
         text: "Usuario editado con exito",
@@ -53,7 +51,7 @@ const Registro = ({ userToEdit, handleClose }) => {
         isAdmin: false,
       });
     } else {
-      addUser(usuario); // <--- llamamos a la funcion addUser del context y pasamos el usuario como parametro
+      addUser(usuario); 
       Swal.fire({
         title: "Registro Exitoso",
         text: "Usuario registrado con exito",
@@ -74,12 +72,10 @@ const Registro = ({ userToEdit, handleClose }) => {
   return (
     <div
       className="colorFondo d-flex justify-content-center align-items-center"
-      style={{ minHeight: "100vh" }}
-    >
+      style={{ minHeight: "100vh" }}>
       <Form
         onSubmit={handleSubmit}
-        style={{ maxWidth: "400px", width: "100%" }}
-      >
+        style={{ maxWidth: "400px", width: "100%" }}>
         <Form.Group className="mb-3">
           <Form.Label className="colorLetras">Nombre</Form.Label>
           <Form.Control
@@ -134,22 +130,27 @@ const Registro = ({ userToEdit, handleClose }) => {
             />
           </Form.Group>
         )}
+        {userToEdit ? (
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                  <Form.Check
+                    type="checkbox"
+                    label="Admin"
+                    checked={usuario.isAdmin}
+                    onChange={handleChange}
+                    name="isAdmin"
+                  />
+                </Form.Group>
+              ) : null}
 
         {userToEdit ? (
           <Button type="submit" variant="warning">
-            {" "}
             Editar Usuario
           </Button>
         ) : (
-          <Button type="submit" variant="success">
-            {" "}
-            Enviar Registro
+          <Button variant="primary" type="submit">
+            Submit
           </Button>
         )}
-
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
       </Form>
     </div>
   );
