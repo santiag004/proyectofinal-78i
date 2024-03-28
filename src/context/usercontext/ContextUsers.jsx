@@ -18,11 +18,9 @@ const ContextUsers = ({ children }) => {
   };
 
   // Función para editar un usuario
-  const upDateUser = async (id, users) => {
-    console.log(id,"id")
-    console.log(users,"users")
+  const upDateUser = async (users) => {
     try {
-      await axios.put(`http://localhost:8080/usuario/${id}`, users);
+      await axios.put(`http://localhost:8080/usuarios/${users.id}`, users);
       await getUsers();
     } catch (error) {
       console.log(error);

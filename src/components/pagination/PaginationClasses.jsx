@@ -1,61 +1,69 @@
 import { useContext, useState } from "react";
-import { UserContextProvider } from "../../context/usercontext/ContextUsers";
+import { ClassesContextProvider } from "../../context/classescontext/ClassesContext.jsx";
 import { Button, Table, Container, Modal } from "react-bootstrap";
-import Registro from "../registro/Registro"
+import FormClases from "../formclasses/FormClases.jsx";
 
-function Pagination() {
-  const { users, pageNumber, setPageNumber, deleteUser } = useContext(UserContextProvider);
-  
-  const [userToEdit, setUserToEdit] = useState(null);
+function PaginationClasses() {
+  const {
+    classes,
+    addClass,
+    upDateClasses,
+    getClasses,
+    deleteClassesclasses,
+    pageNumber,
+    setPageNumber,
+  } = useContext(ClassesContextProvider);
+
+  const [classToEdit, setClassToEdit] = useState(null);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  
+
   // Calcular los índices de inicio y fin de la página actual
   const startIndex = pageNumber * 10;
-  const endIndex = Math.min(startIndex + 10, users.length);
+  const endIndex = Math.min(startIndex + 10, classes.length);
 
   //Funcion para el manejo del usuario a editar
   const handleEdit = (user) => {
-    setUserToEdit(user);
+    setClassToEdit(user);
     setShow(true);
   };
 
   return (
     <>
       <Container>
-        {users.lenght === 0 ? (
-          <h1>no tenes registrado nungun usuario</h1>
+        {classes.lenght === 0 ? (
+          <h1>no tenes clases disponibles</h1>
         ) : (
           <Table striped bordered hover>
             <thead>
               <tr>
                 <th>id</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Telefono</th>
+                <th>Detalle</th>
+                <th>Profesor/a</th>
+                <th>Fecha</th>
+                <th>Hora</th>
                 <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
-              {users.slice(startIndex, endIndex).map((user) => (
+              {classes.slice(startIndex, endIndex).map((c) => (
                 <tr>
-                  <td>{user.id}</td>
-                  <td>{user.nombre}</td>
-                  <td>{user.apellido}</td>
-                  <td>{user.email}</td>
-                  <td>{user.telefono}</td>
+                  <td>{c.id}</td>
+                  <td>{c.detalle}</td>
+                  <td>{c.profesor}</td>
+                  <td>{c.fecha}</td>
+                  <td>{c.hora}</td>
                   <td>
                     <Button
                       variant="outline-primary"
                       onClick={() => {
-                        handleEdit(user);
+                        handleEdit(c);
                       }}>
                       Editar
                     </Button>
                     <Button
                       variant="outline-danger"
-                      onClick={() => deleteUser(user.id)}>
+                      onClick={() => deleteUser(c.id)}>
                       Eliminar
                     </Button>
                   </td>
@@ -72,21 +80,21 @@ function Pagination() {
         </Button>
         <Button
           variant="outline-success"
-          disabled={endIndex >= users.length}
+          disabled={endIndex >= classes.length}
           onClick={() => setPageNumber(pageNumber + 1)}>
           Next
         </Button>
       </Container>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Editar Usuario</Modal.Title>
+          <Modal.Title>Editar clase</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Registro userToEdit={userToEdit} handleClose={handleClose} />
+          {/* <Registro userToEdit={classToEdit} handleClose={handleClose} /> */}
         </Modal.Body>
       </Modal>
     </>
   );
 }
 
-export default Pagination;
+export default PaginationClasses;
