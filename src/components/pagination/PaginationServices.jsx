@@ -14,7 +14,7 @@ function PaginationServices() {
   
   // Calcular los índices de inicio y fin de la página actual
   const startIndex = pageNumber * 10;
-  const endIndex = Math.min(startIndex + 10, users.length);
+  const endIndex = Math.min(startIndex + 10, services.length);
 
   //Funcion para el manejo del servicio a editar
   const handleEdit = (service) => {
