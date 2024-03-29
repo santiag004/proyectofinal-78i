@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const serviceContextProvider = createContext();
 
-const ServiceContext = () => {
+const ServiceContext = ({children}) => {
   const [services, setServices] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
 
@@ -25,6 +25,7 @@ const ServiceContext = () => {
     try {
       let response = await axios.get("http://localhost:8080/services");
       setServices(response.data);
+      console.log(response) 
     } catch (e) {
       console.log(e);
     }
@@ -66,7 +67,9 @@ const upDateService = async (service) => {
         getService,
         upDateService,
         deleteService,
-      }}></serviceContextProvider.Provider>
+      }}>
+        {children}
+      </serviceContextProvider.Provider>
   );
 };
 

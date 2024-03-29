@@ -2,10 +2,11 @@ import { useContext, useState } from "react";
 import { serviceContextProvider } from "../../context/serviceContext/ServiceContext";
 import { Button, Table, Container, Modal } from "react-bootstrap";
 import Swal from 'sweetalert2';
-import FormServise from './../formservice/FormServise';
+import FormServise from '../formservice/FormService';
 
 function PaginationServices() {
   const { services, pageNumber, setPageNumber, deleteService } = useContext(serviceContextProvider);
+  console.log(services)
   
   const [serviceToEdit, setServiceToEdit] = useState(null);
   const [show, setShow] = useState(false);

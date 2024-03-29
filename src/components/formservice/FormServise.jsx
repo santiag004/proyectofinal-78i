@@ -5,48 +5,48 @@ import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 
 const FormService = ({ serviceToEdit, handleClose }) => {
-  const { addService, upDateService } = useContext(serviceContextProvider);
+  const { addService, upDateService} = useContext(serviceContextProvider);
 
-  const [service, setService] = useState({
+  const [servicio, setServicio] = useState({
     id: serviceToEdit ? serviceToEdit.id : uuidv4(),
+    titulo: serviceToEdit ? serviceToEdit.titulo : "",
     url: serviceToEdit ? serviceToEdit.url : "",
-    titulo: serviceToEdit ? serviceToEdit.tituloo : "",
     descripcion: serviceToEdit ? serviceToEdit.descripcion : "",
   });
 
   const handleChange = (e) => {
     e.preventDefault();
-    setService({ ...service, [e.target.name]: e.target.value });
+    setServicio({ ...servicio, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (serviceToEdit) {
-      upDateService(service);
+      upDateClasses(servicio);
       Swal.fire({
-        title: "Servicio editado",
-        text: "Servicio editado con exito",
+        title: "Clase Editado",
+        text: "Clase editado con exito",
         icon: "success",
         confirmButtonText: "Aceptar",
         timer: 1500,
       });
       handleClose();
-      setService({
+      setClase({
         id: uuidv4(),
-        url: "",
-        titulo: "",
-        descripcion: "",
+        detalle: "",
+        profesor: "",
+        fecha: "",
+        hora: "",
       })
     } else {
       Swal.fire({
-        title: "Exitoso",
-        text: "Servicio registrado con exito",
+        title: "Registro Exitoso",
+        text: "Clase registrado con exito",
         icon: "success",
         confirmButtonText: "Aceptar",
       });
-
-      addService(service);
-      setService({
+      addService(servicio);
+      setClase({
         id: uuidv4(),
         detalle: "",
         profesor: "",
@@ -63,31 +63,31 @@ const FormService = ({ serviceToEdit, handleClose }) => {
         <h3>Formulario de servicios</h3>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
-            <Form.Label>Url del servicio</Form.Label>
+            <Form.Label>url</Form.Label>
             <Form.Control
               type="url"
               name="url"
-              value={service.url}
+              value={servicio.url}
               onChange={handleChange}
               placeholder="Url"
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Titulo</Form.Label>
+            <Form.Label>titulo</Form.Label>
             <Form.Control
               type="text"
               name="titulo"
-              value={service.titulo}
+              value={servicio.titulo}
               onChange={handleChange}
-              placeholder="Titulo"
+              placeholder="titulo"
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Descripcion</Form.Label>
+            <Form.Label>desripcion</Form.Label>
             <Form.Control
               type="text"
               name="descripcion"
-              value={service.descripcion}
+              value={servicio.descripcion}
               onChange={handleChange}
               placeholder="descripcion"
             />
@@ -97,7 +97,7 @@ const FormService = ({ serviceToEdit, handleClose }) => {
               Editar servicio
             </Button>
           ) : (
-            <Button type="submit"> Agregar servicio </Button>
+            <Button type="submit"> Agregar servicio</Button>
           )}
         </Form>
       </Container>

@@ -3,14 +3,14 @@
     {
       "id": "1",
       "nombre": "Bruno",
-      "apellido":"Pieruzzi",
-      "email":"admin@amin.com"
+      "apellido": "Pieruzzi",
+      "email": "admin@amin.com"
     },
     {
       "id": "1",
       "nombre": "Evelyn",
-      "apellido":"Pieruzzi",
-      "email":"admin@amin.com"
+      "apellido": "Pieruzzi",
+      "email": "admin@amin.com"
     }
   ],
   "clases": [
@@ -36,5 +36,12 @@
       "hora": ""
     }
   ],
-  "services":[]
+  "services": [
+    {
+      "id": "1",
+      "url":"",
+      "titulo":"algo",
+      "descripcion":"algo"
+    }
+  ]
 }
