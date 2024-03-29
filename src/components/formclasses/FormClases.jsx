@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 
 const FormClases = ({ classToEdit, handleClose }) => {
-  const { addClass, upDateClasses } = useContext(ClassesContextProvider);
+  const { addClass, upDateClasses,getClasses } = useContext(ClassesContextProvider);
 
   const [clase, setClase] = useState({
     id: classToEdit ? classToEdit.id : uuidv4(),
@@ -24,7 +24,21 @@ const FormClases = ({ classToEdit, handleClose }) => {
     e.preventDefault();
     if (classToEdit) {
       upDateClasses(clase);
-      handleClose;
+      Swal.fire({
+        title: "Clase Editado",
+        text: "Clase editado con exito",
+        icon: "success",
+        confirmButtonText: "Aceptar",
+        timer: 1500,
+      });
+      handleClose();
+      setClase({
+        id: uuidv4(),
+        detalle: "",
+        profesor: "",
+        fecha: "",
+        hora: "",
+      })
     } else {
       Swal.fire({
         title: "Registro Exitoso",
@@ -32,6 +46,7 @@ const FormClases = ({ classToEdit, handleClose }) => {
         icon: "success",
         confirmButtonText: "Aceptar",
       });
+      getClasses
       addClass(clase);
       setClase({
         id: uuidv4(),
@@ -42,6 +57,7 @@ const FormClases = ({ classToEdit, handleClose }) => {
       });
     }
   };
+
 
   return (
     <>

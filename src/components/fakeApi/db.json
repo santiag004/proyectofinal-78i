@@ -2,47 +2,39 @@
   "usuarios": [
     {
       "id": "1",
-      "nombre": "María",
-      "apellido": "González",
-      "email": "maria@example.com",
-      "telefono": "2345678901"
-    },
-    {
-      "id": "2",
       "nombre": "Bruno",
-      "apellido": "González",
-      "email": "maria@example.com",
-      "telefono": "2345678901"
+      "apellido":"Pieruzzi",
+      "email":"admin@amin.com"
     },
     {
-      "id": "3",
-      "nombre": "Evelin",
-      "apellido": "Uro",
-      "email": "maria@example.com",
-      "telefono": "2345678901"
+      "id": "1",
+      "nombre": "Evelyn",
+      "apellido":"Pieruzzi",
+      "email":"admin@amin.com"
     }
   ],
   "clases": [
     {
-      "id": "fdb08bb6-2263-4cfd-a801-cf0a304e5dcc",
+      "id": "4535635d-1412-4152-a909-87ce39f115ae",
       "detalle": "clase de pilates",
-      "profesor": "Bruno Pieruzzi",
-      "fecha": "2024-03-31",
-      "hora": "18:30"
+      "profesor": "Evelyn Soledad Uro",
+      "fecha": "2024-03-28",
+      "hora": "18:00"
     },
     {
-      "id": "0a799ae5-ba74-4c1b-882c-6c348f916b0d",
-      "detalle": "pura pesas",
-      "profesor": "Eve Uro",
-      "fecha": "2024-04-02",
-      "hora": "16:00"
-    },
-    {
-      "id": "f0b8690c-d486-47d2-bce3-ff4d21d6d54a",
+      "id": "14f80b2d-97aa-4360-a1fc-ae4fd5a3fd06",
       "detalle": "clase de pilates",
       "profesor": "Bruno Pieruzzi",
       "fecha": "2024-03-28",
-      "hora": "02:22"
+      "hora": "19:14"
+    },
+    {
+      "id": "a33667e5-562e-4be0-90c9-04840e6b669c",
+      "detalle": "clase de pilates",
+      "profesor": "Evelyn Soledad Uro",
+      "fecha": "2024-03-28",
+      "hora": ""
     }
-  ]
+  ],
+  "services":[]
 }

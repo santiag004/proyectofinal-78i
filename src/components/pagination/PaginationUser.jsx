@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { UserContextProvider } from "../../context/usercontext/ContextUsers";
 import { Button, Table, Container, Modal } from "react-bootstrap";
 import Registro from "../registro/Registro"
+import Swal from 'sweetalert2';
 
 function PaginationUser() {
   const { users, pageNumber, setPageNumber, deleteUser } = useContext(UserContextProvider);
@@ -19,6 +20,27 @@ function PaginationUser() {
     setUserToEdit(user);
     setShow(true);
   };
+
+  const mostrarConfirmacion = (id) => {
+    Swal.fire({
+      title: '¿Estás seguro que quieres borrar este usuario?',
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, borrarlo',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteUser(id);
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        
+        console.log('Borrado cancelado');
+      }
+    });
+  };
+
 
   return (
     <>
@@ -55,7 +77,7 @@ function PaginationUser() {
                     </Button>
                     <Button
                       variant="outline-danger"
-                      onClick={() => deleteUser(user.id)}>
+                      onClick={()=>{mostrarConfirmacion(user.id)}}>
                       Eliminar
                     </Button>
                   </td>

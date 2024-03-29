@@ -69,6 +69,7 @@ const Registro = ({ userToEdit, handleClose }) => {
     }
   };
 
+
   return (
     <div
       className="colorFondo d-flex justify-content-center align-items-center"

@@ -1,34 +1,29 @@
 import { useContext, useState } from "react";
-import { ClassesContextProvider } from "../../context/classescontext/ClassesContext.jsx";
+import { serviceContextProvider } from "../../context/serviceContext/ServiceContext";
 import { Button, Table, Container, Modal } from "react-bootstrap";
-import FormClases from "../formclasses/FormClases.jsx";
 import Swal from 'sweetalert2';
+import FormServise from './../formservice/FormServise';
 
-function PaginationClasses() {
-  const {
-    classes,
-    deleteClasses,
-    pageNumber,
-    setPageNumber,
-  } = useContext(ClassesContextProvider);
-
-  const [classToEdit, setClassToEdit] = useState(null);
+function PaginationServices() {
+  const { services, pageNumber, setPageNumber, deleteService } = useContext(serviceContextProvider);
+  
+  const [serviceToEdit, setServiceToEdit] = useState(null);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-
+  
   // Calcular los índices de inicio y fin de la página actual
   const startIndex = pageNumber * 10;
-  const endIndex = Math.min(startIndex + 10, classes.length);
+  const endIndex = Math.min(startIndex + 10, users.length);
 
-  //Funcion para el manejo del usuario a editar
-  const handleEdit = (user) => {
-    setClassToEdit(user);
+  //Funcion para el manejo del servicio a editar
+  const handleEdit = (service) => {
+    setServiceToEdit(service);
     setShow(true);
   };
 
   const mostrarConfirmacion = (id) => {
     Swal.fire({
-      title: '¿Estás seguro que quieres borrar este usuario?',
+      title: '¿Estás seguro que quieres borrar este servicio?',
       text: "¡No podrás revertir esto!",
       icon: 'warning',
       showCancelButton: true,
@@ -38,7 +33,7 @@ function PaginationClasses() {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        deleteClasses(id);
+        deleteService(id);
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         
         console.log('Borrado cancelado');
@@ -46,42 +41,40 @@ function PaginationClasses() {
     });
   };
 
+
   return (
     <>
       <Container>
-        {classes.lenght === 0 ? (
-          <h1>no tenes clases disponibles</h1>
+        {services.lenght === 0 ? (
+          <h1>no tenes registrado nungun usuario</h1>
         ) : (
           <Table striped bordered hover>
             <thead>
               <tr>
                 <th>id</th>
-                <th>Detalle</th>
-                <th>Profesor/a</th>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th>Acciones</th>
+                <th>Url</th>
+                <th>Titulo</th>
+                <th>descripcion</th>
               </tr>
             </thead>
             <tbody>
-              {classes.slice(startIndex, endIndex).map((c) => (
+              {services.slice(startIndex, endIndex).map((s) => (
                 <tr>
-                  <td>{c.id}</td>
-                  <td>{c.detalle}</td>
-                  <td>{c.profesor}</td>
-                  <td>{c.fecha}</td>
-                  <td>{c.hora}</td>
+                  <td>{s.id}</td>
+                  <td>{s.url}</td>
+                  <td>{s.titulo}</td>
+                  <td>{s.email}</td>
                   <td>
                     <Button
                       variant="outline-primary"
                       onClick={() => {
-                        handleEdit(c);
+                        handleEdit(s);
                       }}>
                       Editar
                     </Button>
                     <Button
                       variant="outline-danger"
-                      onClick={() => mostrarConfirmacion(c.id)}>
+                      onClick={()=>{mostrarConfirmacion(s.id)}}>
                       Eliminar
                     </Button>
                   </td>
@@ -98,21 +91,21 @@ function PaginationClasses() {
         </Button>
         <Button
           variant="outline-success"
-          disabled={endIndex >= classes.length}
+          disabled={endIndex >= services.length}
           onClick={() => setPageNumber(pageNumber + 1)}>
           Next
         </Button>
       </Container>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Editar clase</Modal.Title>
+          <Modal.Title>Editar servicio</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormClases classToEdit={classToEdit} handleClose={handleClose} />
+          <FormServise serviceToEdit={serviceToEdit} handleClose={handleClose} />
         </Modal.Body>
       </Modal>
     </>
   );
 }
 
-export default PaginationClasses;
+export default PaginationServices;
