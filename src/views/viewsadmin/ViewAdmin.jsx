@@ -11,6 +11,19 @@ const ViewAdmin = () => {
         <h1>View Admin</h1>
         <Row>
           <Col>
+          <PaginationUser/>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <FormClases/>
+          </Col>
+          <Col>
+            <PaginationClasses />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <FormService/>
           </Col>
           <Col>

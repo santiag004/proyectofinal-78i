@@ -6,15 +6,15 @@ import FormServise from '../formservice/FormService';
 
 function PaginationServices() {
   const { services, pageNumber, setPageNumber, deleteService } = useContext(serviceContextProvider);
-  console.log(services)
+
   
   const [serviceToEdit, setServiceToEdit] = useState(null);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   
   // Calcular los índices de inicio y fin de la página actual
-  const startIndex = pageNumber * 10;
-  const endIndex = Math.min(startIndex + 10, services.length);
+  const startIndex = pageNumber * 5;
+  const endIndex = Math.min(startIndex + 5, services.length);
 
   //Funcion para el manejo del servicio a editar
   const handleEdit = (service) => {
@@ -47,7 +47,7 @@ function PaginationServices() {
     <>
       <Container>
         {services.lenght === 0 ? (
-          <h1>no tenes registrado nungun usuario</h1>
+          <h1>no tenes clases disponibles</h1>
         ) : (
           <Table striped bordered hover>
             <thead>
@@ -56,15 +56,18 @@ function PaginationServices() {
                 <th>Url</th>
                 <th>Titulo</th>
                 <th>descripcion</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
               {services.slice(startIndex, endIndex).map((s) => (
                 <tr>
                   <td>{s.id}</td>
-                  <td>{s.url}</td>
+                  <td>
+                    <img src={s.url} alt="imagen"/>
+                  </td>
                   <td>{s.titulo}</td>
-                  <td>{s.email}</td>
+                  <td>{s.descripcion}</td>
                   <td>
                     <Button
                       variant="outline-primary"
@@ -75,7 +78,7 @@ function PaginationServices() {
                     </Button>
                     <Button
                       variant="outline-danger"
-                      onClick={()=>{mostrarConfirmacion(s.id)}}>
+                      onClick={() => mostrarConfirmacion(s.id)}>
                       Eliminar
                     </Button>
                   </td>
@@ -88,13 +91,13 @@ function PaginationServices() {
           variant="outline-success"
           disabled={pageNumber === 0}
           onClick={() => setPageNumber(pageNumber - 1)}>
-          Previous
+          Anterior
         </Button>
         <Button
           variant="outline-success"
           disabled={endIndex >= services.length}
           onClick={() => setPageNumber(pageNumber + 1)}>
-          Next
+          Siguiente
         </Button>
       </Container>
       <Modal show={show} onHide={handleClose}>
@@ -105,6 +108,7 @@ function PaginationServices() {
           <FormServise serviceToEdit={serviceToEdit} handleClose={handleClose} />
         </Modal.Body>
       </Modal>
+
     </>
   );
 }

@@ -13,35 +13,6 @@
       "email": "admin@amin.com"
     }
   ],
-  "clases": [
-    {
-      "id": "4535635d-1412-4152-a909-87ce39f115ae",
-      "detalle": "clase de pilates",
-      "profesor": "Evelyn Soledad Uro",
-      "fecha": "2024-03-28",
-      "hora": "18:00"
-    },
-    {
-      "id": "14f80b2d-97aa-4360-a1fc-ae4fd5a3fd06",
-      "detalle": "clase de pilates",
-      "profesor": "Bruno Pieruzzi",
-      "fecha": "2024-03-28",
-      "hora": "19:14"
-    },
-    {
-      "id": "a33667e5-562e-4be0-90c9-04840e6b669c",
-      "detalle": "clase de pilates",
-      "profesor": "Evelyn Soledad Uro",
-      "fecha": "2024-03-28",
-      "hora": ""
-    }
-  ],
-  "services": [
-    {
-      "id": "1",
-      "url":"",
-      "titulo":"algo",
-      "descripcion":"algo"
-    }
-  ]
+  "clases": [],
+  "services": []
 }

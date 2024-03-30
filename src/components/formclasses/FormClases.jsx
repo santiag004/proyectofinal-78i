@@ -22,11 +22,23 @@ const FormClases = ({ classToEdit, handleClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Verificar si algún campo está vacío
+    if (!clase.detalle || !clase.profesor || !clase.fecha || !clase.hora) {
+      Swal.fire({
+        title: "Error",
+        text: "Por favor, complete todos los campos antes de enviar el formulario.",
+        icon: "error",
+        confirmButtonText: "Aceptar",
+      });
+      return; // Salir de la función sin enviar el formulario
+    }
+  
     if (classToEdit) {
       upDateClasses(clase);
       Swal.fire({
         title: "Clase Editado",
-        text: "Clase editado con exito",
+        text: "Clase editado con éxito",
         icon: "success",
         confirmButtonText: "Aceptar",
         timer: 1500,
@@ -42,11 +54,10 @@ const FormClases = ({ classToEdit, handleClose }) => {
     } else {
       Swal.fire({
         title: "Registro Exitoso",
-        text: "Clase registrado con exito",
+        text: "Clase registrada con éxito",
         icon: "success",
         confirmButtonText: "Aceptar",
       });
-      getClasses
       addClass(clase);
       setClase({
         id: uuidv4(),

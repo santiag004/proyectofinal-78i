@@ -4,13 +4,16 @@ import ClassesContext from "./context/classescontext/ClassesContext";
 import ServiceContext from "./context/serviceContext/ServiceContext";
 import ViewAdmin from "./views/viewsadmin/ViewAdmin";
 
-
 function App() {
   return (
     <>
-      <ServiceContext>
-        <ViewAdmin />
-      </ServiceContext>
+      <ContextUsers>
+        <ClassesContext>
+          <ServiceContext>
+            <ViewAdmin />
+          </ServiceContext>
+        </ClassesContext>
+      </ContextUsers>
     </>
   );
 }

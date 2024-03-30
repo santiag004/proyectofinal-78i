@@ -94,13 +94,13 @@ function PaginationClasses() {
           variant="outline-success"
           disabled={pageNumber === 0}
           onClick={() => setPageNumber(pageNumber - 1)}>
-          Previous
+          Anterior
         </Button>
         <Button
           variant="outline-success"
           disabled={endIndex >= classes.length}
           onClick={() => setPageNumber(pageNumber + 1)}>
-          Next
+          Siguiente
         </Button>
       </Container>
       <Modal show={show} onHide={handleClose}>
