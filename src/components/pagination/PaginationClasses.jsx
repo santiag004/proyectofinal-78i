@@ -74,6 +74,7 @@ function PaginationClasses() {
                   <td>
                     <Button
                       variant="outline-primary"
+                      className="mx-4"
                       onClick={() => {
                         handleEdit(c);
                       }}>
@@ -92,6 +93,7 @@ function PaginationClasses() {
         )}
         <Button
           variant="outline-success"
+          className="mx-4"
           disabled={pageNumber === 0}
           onClick={() => setPageNumber(pageNumber - 1)}>
           Anterior

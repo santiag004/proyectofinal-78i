@@ -17,7 +17,7 @@ const UserTable = () => {
   };
 
   return (
-    <>
+    <div className="user-table">
     <h2>Tabla de usuarios</h2>
 
     {users.length === 0 ? (
@@ -72,7 +72,7 @@ const UserTable = () => {
         {/* <Registro editUsuario={editUsuario} handleClose={handleClose} /> */}
       </Modal.Body>
     </Modal>
-  </>
+  </div>
   );
 };
 

@@ -72,8 +72,7 @@ const Registro = ({ userToEdit, handleClose }) => {
 
   return (
     <div
-      className="colorFondo d-flex justify-content-center align-items-center"
-      style={{ minHeight: "100vh" }}>
+      className="colorFondo d-flex justify-content-center align-items-center">
       <Form
         onSubmit={handleSubmit}
         style={{ maxWidth: "400px", width: "100%" }}>

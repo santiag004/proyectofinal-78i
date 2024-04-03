@@ -4,11 +4,12 @@ import PaginationUser from "../../components/pagination/PaginationUser";
 import PaginationClasses from "../../components/pagination/PaginationClasses";
 import PaginationService from "../../components/pagination/PaginationServices"
 import { Row, Col, Container } from "react-bootstrap";
+import './admin.css'
 const ViewAdmin = () => {
   return (
     <>
-      <Container>
-        <h1>View Admin</h1>
+      <Container className="color-letras">
+        <h1 className="text-center py-3">Administración</h1>
         <Row>
           <Col>
           <PaginationUser/>

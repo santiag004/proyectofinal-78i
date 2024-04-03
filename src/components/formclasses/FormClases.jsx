@@ -3,6 +3,7 @@ import { ClassesContextProvider } from "../../context/classescontext/ClassesCont
 import { Form, Button, Container } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
+import './clases.css'
 
 const FormClases = ({ classToEdit, handleClose }) => {
   const { addClass, upDateClasses,getClasses } = useContext(ClassesContextProvider);
@@ -73,8 +74,8 @@ const FormClases = ({ classToEdit, handleClose }) => {
   return (
     <>
       <Container>
-        <h3>Formulario de clases</h3>
-        <Form onSubmit={handleSubmit}>
+        <h3 className="text-center py-3">Administrar Clases</h3>
+        <Form className="formulario-clases" onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Detalle de la clase</Form.Label>
             <Form.Control

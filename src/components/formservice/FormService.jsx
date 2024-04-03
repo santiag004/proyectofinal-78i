@@ -3,6 +3,7 @@ import { serviceContextProvider } from "../../context/serviceContext/ServiceCont
 import { Form, Button, Container } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
+import './servicios.css'
 
 const FormService = ({ serviceToEdit, handleClose }) => {
   const { addService, upDateService } = useContext(serviceContextProvider);
@@ -75,8 +76,8 @@ const FormService = ({ serviceToEdit, handleClose }) => {
   return (
     <>
       <Container>
-        <h3>Formulario de servicios</h3>
-        <Form onSubmit={handleSubmit}>
+        <h3 className="text-center py-3">Administrar Servicios</h3>
+        <Form className="formulario-services" onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Url del servicio</Form.Label>
             <Form.Control

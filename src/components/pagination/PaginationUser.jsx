@@ -48,7 +48,7 @@ function PaginationUser() {
         {users.lenght === 0 ? (
           <h1>no tenes registrado nungun usuario</h1>
         ) : (
-          <Table striped bordered hover>
+          <Table className="user-table" striped bordered hover>
             <thead>
               <tr>
                 <th>id</th>
@@ -70,6 +70,7 @@ function PaginationUser() {
                   <td>
                     <Button
                       variant="outline-primary"
+                      className="mx-4"
                       onClick={() => {
                         handleEdit(user);
                       }}>
@@ -88,6 +89,7 @@ function PaginationUser() {
         )}
         <Button
           variant="outline-success"
+          className="mx-4"
           disabled={pageNumber === 0}
           onClick={() => setPageNumber(pageNumber - 1)}>
           Anterior
@@ -100,10 +102,8 @@ function PaginationUser() {
         </Button>
       </Container>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Editar Usuario</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="">
+          <h1 className="text-center">Editar Usuario</h1>
           <Registro userToEdit={userToEdit} handleClose={handleClose} />
         </Modal.Body>
       </Modal>

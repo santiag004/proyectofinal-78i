@@ -3,6 +3,7 @@ import ContextUsers from "./context/usercontext/ContextUsers";
 import ClassesContext from "./context/classescontext/ClassesContext";
 import ServiceContext from "./context/serviceContext/ServiceContext";
 import ViewAdmin from "./views/viewsadmin/ViewAdmin";
+import './App.css'
 
 function App() {
   return (

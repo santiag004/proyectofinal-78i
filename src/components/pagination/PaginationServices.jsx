@@ -88,12 +88,14 @@ function PaginationServices() {
           </Table>
         )}
         <Button
+        className="mx-4"
           variant="outline-success"
           disabled={pageNumber === 0}
           onClick={() => setPageNumber(pageNumber - 1)}>
           Anterior
         </Button>
         <Button
+        className=""
           variant="outline-success"
           disabled={endIndex >= services.length}
           onClick={() => setPageNumber(pageNumber + 1)}>
