@@ -11,7 +11,7 @@ export const Navegador = () => {
 
     const navigate = useNavigate()
 
-  const{logOut} = useContext(UsuariosProvider)
+    const{logOut} = useContext(UsuariosProvider)
 
 
     const user = JSON.parse(localStorage.getItem("user"))
