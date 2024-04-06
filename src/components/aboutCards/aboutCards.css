@@ -1,25 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&display=swap');
 
 :root {
-  /* Colors */
+
   --brand-color: #14ffec;
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
-  /* Fonts */
+
   --font-title: "Anek Tamil", sans-serif;
   --font-text: "Anek Tamil", sans-serif;
 }
 
-/* RESET */
-
-/* Box sizing rules */
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-} */
-
-/* Remove default margin */
 body,
 h2,
 p {
@@ -43,24 +33,6 @@ p {
 
 .flow > * + * {
   margin-top: var(--flow-space, 1em);
-}
-
-/* CARD COMPONENT */
-
-.cardsContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.cardsContainerSecond {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 .aboutCard {
@@ -109,7 +81,7 @@ p {
 .card__title {
   position: relative;
   width: fit-content;
-  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+  width: -moz-fit-content;
 }
 
 .card__title::after {
@@ -125,7 +97,7 @@ p {
 .card__button {
   padding: 0.75em 1.6em;
   width: fit-content;
-  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+  width: -moz-fit-content;
   font-variant: small-caps;
   font-weight: bold;
   border-radius: 0.45em;
