@@ -10,15 +10,16 @@ const About = () => {
             <Container className="aboutcards-container">
                 <Row>
                     <Col lg={4} md={12} className="d-flex align-items-center justify-content-center">
-                        <AboutCards name='Santiago Soraire' phUrl="public\images\ss.jpg" />
-                    </Col>
-                    
-                    <Col lg={4} md={12} className="d-flex align-items-center justify-content-center">
                     <AboutCards name='Bruno Pieruzzi' phUrl='public\images\bp.jpg' />
                     </Col>
 
                     <Col lg={4} md={12} className="d-flex align-items-center justify-content-center">
-                        <AboutCards name='Facundo Arebalo' phUrl='public\images\fa.jpg' />
+                    <AboutCards name='Facundo Arebalo' phUrl='public\images\fa.jpg' />
+                    </Col>
+
+                    <Col lg={4} md={12} className="d-flex align-items-center justify-content-center">
+                    <AboutCards name='Inés Toledo' phUrl='public\images\it.jpg' />
+                        
                     </Col>
 
                     <Col lg={6} md={12} className="d-flex align-items-center justify-content-center">
@@ -26,7 +27,8 @@ const About = () => {
                     </Col>
 
                     <Col lg={6} md={12} className="d-flex align-items-center justify-content-center">
-                        <AboutCards name='Inés Toledo' phUrl='public\images\it.jpg' />
+                    <AboutCards name='Santiago Soraire' phUrl="public\images\ss.jpg" />
+                        
                     </Col>
                 </Row>
             </Container>
