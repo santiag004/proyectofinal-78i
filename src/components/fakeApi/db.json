@@ -1,0 +1,20 @@
+{
+  "usuarios": [
+    {
+      "id": "9d34c7c7-f2b9-4dce-a222-ebe8c5f69fe7",
+      "nombre": "Javier",
+      "apellido": "Rodriguez",
+      "email": "javier@gmial.com",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "id": "0e53f06a-35d5-483c-a8f1-5e7116b82397",
+      "nombre": "fede",
+      "apellido": "Mayol",
+      "email": "fede@gmail.com",
+      "password": "123",
+      "isAdmin": false
+    }
+  ]
+}
