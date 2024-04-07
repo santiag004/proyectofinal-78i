@@ -1,6 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { UserContextProvider } from "../../context/usercontext/ContextUsers";
+import {UsuariosProvider} from "../../context/UsuariosContext";
 import { useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
@@ -151,9 +152,5 @@ const Registro = ({ userToEdit, handleClose }) => {
             Submit
           </Button>
         )}
-      </Form>
-    </div>
-  );
-};
 
 export default Registro;

@@ -1,18 +1,30 @@
 {
   "usuarios": [
     {
-      "id": "1",
-      "nombre": "Bruno",
-      "apellido": "Pieruzzi",
-      "email": "admin@amin.com"
+      "id": "9d34c7c7-f2b9-4dce-a222-ebe8c5f69fe7",
+      "nombre": "Javier",
+      "apellido": "Rodriguez",
+      "email": "javier@gmial.com",
+      "password": "123",
+      "isAdmin": false
     },
     {
-      "id": "1",
-      "nombre": "Evelyn",
-      "apellido": "Pieruzzi",
-      "email": "admin@amin.com"
+      "id": "0e53f06a-35d5-483c-a8f1-5e7116b82397",
+      "nombre": "fede",
+      "apellido": "Mayol",
+      "email": "fede@gmail.com",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "id": "597e8207-79e7-472c-95bd-08f4d49d9bd0",
+      "nombre": "Franco",
+      "apellido": "Mastantuono",
+      "email": "user@gmail.com",
+      "password": "1234",
+      "isAdmin": false
     }
-  ],
+  ]
+}
   "clases": [],
   "services": []
-}
