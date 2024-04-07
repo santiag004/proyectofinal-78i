@@ -1,6 +1,6 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Rutas from './components/Rutas/Rutas'
+import Router from './components/Router/Router'
 import Navegador from './components/nav/Navegador'
 import Footer from './components/footer/Footer'
 import WeatherContext from './context/WeatherContext';
@@ -19,7 +19,7 @@ function App() {
     <ServiceContext>
       <WeatherContext>
         <Navegador/>
-        <Rutas />
+        <Router />
         <Footer/>
       </WeatherContext>
     </ServiceContext>

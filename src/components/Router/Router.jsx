@@ -5,7 +5,7 @@ import Login from '../../views/login/Login'
 import Registro from '../registro/Registro'
 import ViewAdmin from '../../views/viewsadmin/ViewAdmin'
 
-const Rutas = () => {
+const Router = () => {
   return (
     <>
 
@@ -21,4 +21,4 @@ const Rutas = () => {
   )
 }
 
-export default Rutas
+export default Router
