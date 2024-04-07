@@ -2,10 +2,17 @@ import {Container, Nav, Navbar, Button} from 'react-bootstrap';
 import './navbarStyle.css'
 import logo from '../../assets/logo.jpg'
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UsuariosProvider } from '../../context/UsuariosContext';
 
 const Navegador = () => {
 
 const navigate = useNavigate()
+
+const{logOut} = useContext(UsuariosProvider)
+
+
+const user = JSON.parse(localStorage.getItem("user"))
 
   return (
     <Navbar expand="lg" className="navStyle">
@@ -24,12 +31,18 @@ const navigate = useNavigate()
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className='navLink mx-5' href="#home">Inicio</Nav.Link>
-            <Nav.Link className='navLink mx-5' href="#contacto">Contacto</Nav.Link>
-            <Nav.Link className='navLink mx-5' href="#aboutus">About</Nav.Link>
+            <Nav.Link className='navLink mx-5' onClick={() => navigate('/')}>Inicio</Nav.Link>
+            <Nav.Link className='navLink mx-5' onClick={() => navigate('/contacto')}>Contacto</Nav.Link>
+            <Nav.Link className='navLink mx-5' onClick={() => navigate('/about')}>About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Button className='loginButton mx-5' variant='outline-dark'>Login</Button>
+        
+
+        {user ? (
+        <Button className='loginButton mx-5' variant='outline-dark' onClick={() => logOut()}>Logout</Button>
+      ) : (
+        <Button className='loginButton mx-5' variant='outline-dark' onClick={() => navigate('/login')}>Login</Button>
+      )}
       </Container>
     </Navbar>
   );
