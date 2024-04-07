@@ -10,5 +10,4 @@ const Rutas = () => {
     </>
   )
 }
-
 export default Rutas

@@ -17,6 +17,7 @@
 
 .service-info li {
     font-size: 0.9rem;
+    color: white;
 }
 
 .service-name {
@@ -29,14 +30,8 @@
     text-align: center;
     font-weight: 500;
     font-size: 1rem;
+    color: white;
 }
-
-/* .carousel-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-} */
 
 @media screen and (max-width: 920px) {
     .carousel-col {

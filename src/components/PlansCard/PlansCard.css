@@ -63,6 +63,7 @@
     border-radius: 3px;
     cursor: pointer;
     transition: all 0.7s;
+    color: white;
 }
 
 .join-button:hover {
