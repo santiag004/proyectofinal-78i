@@ -18,13 +18,40 @@
     },
     {
       "id": "597e8207-79e7-472c-95bd-08f4d49d9bd0",
-      "nombre": "Franco",
-      "apellido": "Mastantuono",
+      "nombre": "Facundo",
+      "apellido": "Colidio",
       "email": "user@gmail.com",
-      "password": "1234",
+      "telefono": "1232132131",
+      "password": "",
+      "isAdmin": false
+    },
+    {
+      "id": "109f51e6-d02e-4ed2-b23c-c98d9698400e",
+      "nombre": "Test1",
+      "apellido": "Testt",
+      "email": "test@test.com",
+      "telefono": "",
+      "password": "12345",
+      "isAdmin": false
+    },
+    {
+      "id": "bb9e09cf-27a4-43ae-9dd7-7cdb19419e51",
+      "nombre": "testeo",
+      "apellido": "142124",
+      "email": "1@1.com",
+      "telefono": "",
+      "password": "123",
       "isAdmin": false
     }
-  ]
-}
-  "clases": [],
+  ],
+  "clases": [
+    {
+      "id": "3911f0ae-8e17-497a-9287-cd78b2542ab4",
+      "detalle": "aaaa",
+      "profesor": "aaaaa",
+      "fecha": "2024-04-19",
+      "hora": "00:07"
+    }
+  ],
   "services": []
+}

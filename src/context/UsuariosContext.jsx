@@ -20,7 +20,7 @@ const UsuariosContext = ({children}) => {
     }
   }
 
-  const addUser = async (usuario) => {
+  const addUsuario = async (usuario) => {
     try{
       const response = await axios.post("http://localhost:8000/usuarios", usuario)
       setUsuarios([...usuarios, response.data])
@@ -42,7 +42,7 @@ const UsuariosContext = ({children}) => {
   return (
     <>
     
-    <UsuariosProvider.Provider value={{usuarios, getUsers, addUser, logOut}}>
+    <UsuariosProvider.Provider value={{usuarios, getUsers, addUsuario, logOut}}>
       {children}
     </UsuariosProvider.Provider>
 

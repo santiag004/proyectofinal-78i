@@ -7,10 +7,19 @@ const ContextUsers = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
 
+  const addUsuario = async (usuario) => {
+    try{
+      const response = await axios.post("http://localhost:8000/usuarios", usuario)
+      setUsers([...users, response.data])
+    } catch (error){
+      console.log(error)
+    }
+  } 
+
   // Función para traer usuarios
   const getUsers = async () => {
     try {
-      let response = await axios.get("http://localhost:8080/usuarios");
+      let response = await axios.get("http://localhost:8000/usuarios");
       setUsers(response.data);
     } catch (e) {
       console.log(e);
@@ -20,7 +29,7 @@ const ContextUsers = ({ children }) => {
   // Función para editar un usuario
   const upDateUser = async (users) => {
     try {
-      await axios.put(`http://localhost:8080/usuarios/${users.id}`, users);
+      await axios.put(`http://localhost:8000/usuarios/${users.id}`, users);
       await getUsers();
     } catch (error) {
       console.log(error);
@@ -30,7 +39,7 @@ const ContextUsers = ({ children }) => {
   // Función para eliminar un usuario
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/usuarios/${id}`);
+      await axios.delete(`http://localhost:8000/usuarios/${id}`);
       await getUsers();
     } catch (e) {
       console.log(e);
@@ -53,6 +62,7 @@ const ContextUsers = ({ children }) => {
         upDateUser,
         pageNumber,
         setPageNumber,
+        addUsuario
       }}>
       {children}
     </UserContextProvider.Provider>
