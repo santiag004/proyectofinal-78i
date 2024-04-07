@@ -1,22 +1,23 @@
-
-import Navegador from './components/navegador/Navegador'
-import Rutas from './components/rutas/Rutas'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Rutas from './components/Rutas/Rutas'
+import Navegador from './components/nav/Navegador'
+import Footer from './components/footer/Footer'
+import WeatherContext from './context/WeatherContext';
 import UsuariosContext from './context/UsuariosContext'
 
-
 function App() {
-
-
-
-
+  
 
   return (
     <>
-      <UsuariosContext>
+    <UsuariosContext>
+      <WeatherContext>
         <Navegador/>
-        <Rutas/>
-      </UsuariosContext>
+        <Rutas />
+        <Footer/>
+      </WeatherContext>
+    </UsuariosContext>
     </>
   )
 }

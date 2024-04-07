@@ -1,0 +1,34 @@
+.navStyle {
+  background-color: #000000;
+  font-size: 1.2rem;
+}
+
+
+.navLink {
+  position: relative;
+  left: 20rem; 
+  color: #14ffec !important;
+  /* text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec; */
+}
+.navLink:hover {
+  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec, 0 5px 30px #14ffec;
+}
+
+.brandLogo img {
+  display: flex;
+  align-items: center;
+}
+
+.loginButton {
+  color: #14ffec !important;
+  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec;
+  border: none; 
+  background-color: transparent; 
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec, 0 5px 30px #14ffec;
+}
+
+
