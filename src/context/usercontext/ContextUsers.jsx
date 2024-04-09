@@ -50,6 +50,11 @@ const ContextUsers = ({ children }) => {
     getUsers();
   }, []);
 
+  const logOut = () =>{
+    localStorage.removeItem("user")
+    window.location.href = "/"
+  }
+
   const startIndex = pageNumber * 10;
   const endIndex = startIndex + 10;
 
@@ -62,7 +67,8 @@ const ContextUsers = ({ children }) => {
         upDateUser,
         pageNumber,
         setPageNumber,
-        addUsuario
+        addUsuario,
+        logOut
       }}>
       {children}
     </UserContextProvider.Provider>

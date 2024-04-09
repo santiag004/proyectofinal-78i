@@ -5,16 +5,16 @@ import { Container, Row, Col } from "react-bootstrap";
 import '../../css/login.css'
 import img from "../../assets/img/img.jpg";
 import {Link, useNavigate} from 'react-router-dom'
-import {UsuariosProvider} from "../../context/UsuariosContext";
 import Swal from "sweetalert2";
+import { UserContextProvider } from "../../context/usercontext/ContextUsers";
 
 
 const Login = () => {
 
 
   const navigate = useNavigate()
-  const {usuarios} = useContext(UsuariosProvider)
-  console.log(usuarios, "usuarios desde el login")
+
+  const{users} = useContext(UserContextProvider)
 
   const registro = (e) =>{
     navigate('/registro')
@@ -27,7 +27,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     try {
-      const user = usuarios.find((user) => user.email === email && user.password === password)
+      const user = users.find((user) => user.email === email && user.password === password)
       if (user){
         Swal.fire({
           title: "Bienvenido",

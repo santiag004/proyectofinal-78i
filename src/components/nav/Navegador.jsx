@@ -3,13 +3,14 @@ import './navbarStyle.css'
 import logo from '../../assets/logo.jpg'
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { UsuariosProvider } from '../../context/UsuariosContext';
+import { UserContextProvider } from '../../context/usercontext/ContextUsers';
+
 
 const Navegador = () => {
 
 const navigate = useNavigate()
 
-const{logOut} = useContext(UsuariosProvider)
+const {logOut} = useContext(UserContextProvider)
 
 
 const user = JSON.parse(localStorage.getItem("user"))

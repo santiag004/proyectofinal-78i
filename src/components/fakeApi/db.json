@@ -42,6 +42,15 @@
       "telefono": "",
       "password": "123",
       "isAdmin": false
+    },
+    {
+      "id": "8fabe454-e3af-4132-b553-8c2d7412888f",
+      "nombre": "flor",
+      "apellido": "flor13",
+      "email": "flor@flor.com",
+      "telefono": "",
+      "password": "123",
+      "isAdmin": false
     }
   ],
   "clases": [
