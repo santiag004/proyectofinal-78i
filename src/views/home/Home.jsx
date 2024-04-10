@@ -1,4 +1,3 @@
-import React from 'react'
 import Carrusel from '../../components/Carousel/Carousel'
 import Gymservices from '../../components/Gymservices/Gymservices'
 import TrainerCarousel from '../../components/TrainerCarousel/TrainerCarousel'
