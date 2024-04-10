@@ -1,0 +1,42 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: "Anek Tamil", sans-serif;
+       height: 100vh;
+      
+    }
+   
+    .errorimg {
+      width: 20%;
+    }
+    .error404-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items:center;
+      justify-content: center;
+    }
+    
+    .err-title {
+      color: #14ffec;
+      font-size: 40px;
+      padding: 40px;
+  
+    }
+    .boton-err a button {
+      padding: 13px 30px;
+      border-radius: 15px;
+      border: none;
+      background: #14ffec;
+      color:black
+    }
+  
+    
+    @media screen and (max-width: 630px) {
+      .err-title {
+        font-size: 16px;
+      }
+     
+      
+    }

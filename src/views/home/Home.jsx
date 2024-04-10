@@ -1,9 +1,22 @@
-import React from 'react'
-import Cards from '../../components/cards/Cards'
+import Carrusel from '../../components/Carousel/Carousel'
+import Gymservices from '../../components/Gymservices/Gymservices'
+import TrainerCarousel from '../../components/TrainerCarousel/TrainerCarousel'
+import PlansSection from '../../components/PlansSection/PlansSection'
+import FeaturedProd from '../../components/FeaturedProduct/FeaturedProd'
+import PhotoGallery from '../../components/PhotoGallery/PhotoGallery'
+import Weather from '../../components/Weather/Weather'
 
 const Home = () => {
   return (
-    <Cards/>
+    <>
+    <Carrusel/>
+    <Gymservices/>
+    <Weather/>
+    <TrainerCarousel/>
+    <PlansSection/>
+    <FeaturedProd/>
+    <PhotoGallery/>
+    </>
   )
 }
 
