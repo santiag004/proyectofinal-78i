@@ -1,0 +1,26 @@
+.card-container {
+    background-color: #0D7377;
+    padding: 15px;
+    transition: all 0.7s;
+}
+
+.card-container:hover {
+    box-shadow: 0 0 10px 5px rgba(20, 255, 235, 0.575); /* Color de sombra difuminado */
+  }
+
+.card-container h2 {
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+}
+
+.trainer-name {
+    padding: 0;
+}
