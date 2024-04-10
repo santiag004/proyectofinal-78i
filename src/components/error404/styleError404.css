@@ -1,6 +1,4 @@
 body {
-    background-color: #131010(34, 9, 44);
-    background:radial-gradient(circle, rgb(2, 4, 17) 0%, rgb(14, 13, 13) 100%);
       margin: 0;
       padding: 0;
       font-family: "Anek Tamil", sans-serif;
@@ -8,10 +6,10 @@ body {
       
     }
    
-    img {
+    .errorimg {
       width: 20%;
     }
-    .container {
+    .error404-container {
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -20,23 +18,23 @@ body {
       justify-content: center;
     }
     
-    h1 {
+    .err-title {
       color: #14ffec;
       font-size: 40px;
       padding: 40px;
   
     }
-    button {
+    .boton-err a button {
       padding: 13px 30px;
       border-radius: 15px;
       border: none;
       background: #14ffec;
-      color:#14ffec
+      color:black
     }
   
     
     @media screen and (max-width: 630px) {
-      h1 {
+      .err-title {
         font-size: 16px;
       }
      
