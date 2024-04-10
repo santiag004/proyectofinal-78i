@@ -1,0 +1,66 @@
+{
+  "usuarios": [
+    {
+      "id": "9d34c7c7-f2b9-4dce-a222-ebe8c5f69fe7",
+      "nombre": "Javier",
+      "apellido": "Rodriguez",
+      "email": "javier@gmial.com",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "id": "0e53f06a-35d5-483c-a8f1-5e7116b82397",
+      "nombre": "fede",
+      "apellido": "Mayol",
+      "email": "fede@gmail.com",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "id": "597e8207-79e7-472c-95bd-08f4d49d9bd0",
+      "nombre": "Facundo",
+      "apellido": "Colidio",
+      "email": "user@gmail.com",
+      "telefono": "1232132131",
+      "password": "",
+      "isAdmin": false
+    },
+    {
+      "id": "109f51e6-d02e-4ed2-b23c-c98d9698400e",
+      "nombre": "Test1",
+      "apellido": "Testt",
+      "email": "test@test.com",
+      "telefono": "",
+      "password": "12345",
+      "isAdmin": false
+    },
+    {
+      "id": "bb9e09cf-27a4-43ae-9dd7-7cdb19419e51",
+      "nombre": "testeo",
+      "apellido": "142124",
+      "email": "1@1.com",
+      "telefono": "",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "id": "8fabe454-e3af-4132-b553-8c2d7412888f",
+      "nombre": "flor",
+      "apellido": "flor13",
+      "email": "flor@flor.com",
+      "telefono": "",
+      "password": "123",
+      "isAdmin": false
+    }
+  ],
+  "clases": [
+    {
+      "id": "3911f0ae-8e17-497a-9287-cd78b2542ab4",
+      "detalle": "aaaa",
+      "profesor": "aaaaa",
+      "fecha": "2024-04-19",
+      "hora": "00:07"
+    }
+  ],
+  "services": []
+}

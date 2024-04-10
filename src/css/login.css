@@ -1,0 +1,26 @@
+.colorFondo{
+    background-color: #212121 !important;
+    min-height: 100vh;
+}
+
+.colorPalabras{
+    color: #14FFEC;
+}
+
+.colorRegistro{
+    color: #0D7377;
+    text-decoration: none;
+}
+
+
+@media (max-width: 765px) {
+    figure{
+        display: none;
+    }
+    .colorFondo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+  }
