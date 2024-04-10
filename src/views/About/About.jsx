@@ -1,6 +1,6 @@
-import Aboutus from "../components/Aboutus/Aboutus"
+import Aboutus from "../../components/Aboutus/Aboutus"
 import { Container, Row, Col } from 'react-bootstrap'
-import AboutCards from "../components/aboutCards/AboutCards"
+import AboutCards from "../../components/aboutCards/AboutCards"
 import './About.css'
 
 const About = () => {
