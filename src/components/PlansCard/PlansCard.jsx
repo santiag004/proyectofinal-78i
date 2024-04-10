@@ -1,7 +1,11 @@
 import { Container } from "react-bootstrap"
 import './PlansCard.css'
+import { useNavigate } from 'react-router-dom';
 
 const PlansCard = ({planName, planPrice, planDet1, planDet2, planDet3}) => {
+
+  const navigate = useNavigate()
+
   return (
     <>
     <Container className="plan-container">
@@ -13,7 +17,7 @@ const PlansCard = ({planName, planPrice, planDet1, planDet2, planDet3}) => {
             <li>{planDet3}</li>
         </ul>
         <p>Cancela cuando quieras.</p>
-        <button className="join-button">QUIERO UNIRME</button>
+        <button className="join-button" onClick={() => navigate('/detalles')}>QUIERO UNIRME</button>
     </Container>
     </>
   )

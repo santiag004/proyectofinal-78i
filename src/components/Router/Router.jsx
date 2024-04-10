@@ -7,6 +7,7 @@ import ViewAdmin from '../../views/viewsadmin/ViewAdmin'
 import About from '../../views/About/About'
 import ViewError404 from '../../views/error404/ViewError404'
 import ViewContacto from '../../views/viewcontacto/ViewContacto'
+import PaginaDetalles from '../../views/detalles/PaginaDetalles'
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path='/admin'  element={<ViewAdmin/>} />
         <Route path='/about'  element={<About/>} />
         <Route path='/contacto'  element={<ViewContacto/>} />
+        <Route path='/detalles'  element={<PaginaDetalles/>} />
     </Routes>
 
     </>
