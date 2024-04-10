@@ -16,7 +16,7 @@ const {logOut} = useContext(UserContextProvider)
 const user = JSON.parse(localStorage.getItem("user"))
 
   return (
-    <Navbar expand="lg" className="navStyle">
+    <Navbar expand="lg" className="navStyle sticky-top">
       <Container>
         <Navbar.Brand className='brandLogo' href="#home">
           <img

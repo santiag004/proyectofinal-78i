@@ -3,6 +3,7 @@ import { serviceContextProvider } from "../../context/serviceContext/ServiceCont
 import { Button, Table, Container, Modal } from "react-bootstrap";
 import Swal from 'sweetalert2';
 import FormServise from '../formservice/FormService';
+import './users.css'
 
 function PaginationServices() {
   const { services, pageNumber, setPageNumber, deleteService } = useContext(serviceContextProvider);
@@ -70,16 +71,18 @@ function PaginationServices() {
                   <td>{s.descripcion}</td>
                   <td>
                     <Button
+                    className="botonEdit"
                       variant="outline-primary"
                       onClick={() => {
                         handleEdit(s);
                       }}>
-                      Editar
+                      <FaEdit/>
                     </Button>
                     <Button
+                    className="botonDelete"
                       variant="outline-danger"
                       onClick={() => mostrarConfirmacion(s.id)}>
-                      Eliminar
+                     <FaTrashAlt/>
                     </Button>
                   </td>
                 </tr>

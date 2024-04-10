@@ -3,6 +3,8 @@ import { UserContextProvider } from "../../context/usercontext/ContextUsers";
 import { Button, Table, Container, Modal } from "react-bootstrap";
 import Registro from "../registro/Registro"
 import Swal from 'sweetalert2';
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import './users.css'
 
 function PaginationUser() {
   const { users, pageNumber, setPageNumber, deleteUser } = useContext(UserContextProvider);
@@ -70,16 +72,17 @@ function PaginationUser() {
                   <td>
                     <Button
                       variant="outline-primary"
-                      className="mx-4"
+                      className="botonEdit mx-4"
                       onClick={() => {
                         handleEdit(user);
-                      }}>
-                      Editar
+                      }}> <FaEdit/>
+                     
                     </Button>
                     <Button
+                    className="botonDelete"
                       variant="outline-danger"
                       onClick={()=>{mostrarConfirmacion(user.id)}}>
-                      Eliminar
+                     <FaTrashAlt/> 
                     </Button>
                   </td>
                 </tr>
