@@ -33,6 +33,7 @@ const user = JSON.parse(localStorage.getItem("user"))
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link className='navLink mx-5' onClick={() => navigate('/')}>Inicio</Nav.Link>
+            <Nav.Link className='navLink mx-5' onClick={() => navigate('/clases')}>Clases</Nav.Link>
             <Nav.Link className='navLink mx-5' onClick={() => navigate('/contacto')}>Contacto</Nav.Link>
             <Nav.Link className='navLink mx-5' onClick={() => navigate('/about')}>About</Nav.Link>
           </Nav>
