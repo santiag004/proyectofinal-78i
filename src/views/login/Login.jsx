@@ -1,4 +1,4 @@
-import { React, useContext, useState } from "react";
+import { React, useContext, useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
@@ -14,7 +14,8 @@ const Login = () => {
 
   const navigate = useNavigate()
 
-  const{users} = useContext(UserContextProvider)
+  const{users, UsuarioLogueado, loginUsuario} = useContext(UserContextProvider)
+  
 
   const registro = (e) =>{
     navigate('/registro')
@@ -24,32 +25,62 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  useEffect(() => {
+    if (UsuarioLogueado) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Bienvenido",
+        text: "Sesión iniciada con éxito",
+        confirmButtonText: "ACEPTAR"
+      });
+
+      const usuario = {
+        nombre: UsuarioLogueado.nombre,
+        apellido: UsuarioLogueado.apellido,
+        admin: UsuarioLogueado.admin,
+      };
+
+      localStorage.setItem("user", JSON.stringify(usuario));
+      
+    } 
+  }, [UsuarioLogueado]);
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   try {
+  //     const user = users.find((user) => user.email === email && user.password === password)
+  //     if (user){
+  //       Swal.fire({
+  //         title: "Bienvenido",
+  //         text: "Sesion iniciada con exito",
+  //         icon: "success",
+  //         confirmButtonText: "Aceptar",
+  //       })
+  //       localStorage.setItem("user", JSON.stringify(user))
+  //       navigate("/")
+  //     }
+  //     else{
+  //       Swal.fire({
+  //         title: "Error",
+  //         text: "Usuario o contraseña incorrectos",
+  //         icon: "error",
+  //         confirmButtonText: "Aceptar",
+  //       })
+  //     }
+  //   } catch (error){
+  //     console.log(error)
+  //   }
+
+  // }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     try {
-      const user = users.find((user) => user.email === email && user.password === password)
-      if (user){
-        Swal.fire({
-          title: "Bienvenido",
-          text: "Sesion iniciada con exito",
-          icon: "success",
-          confirmButtonText: "Aceptar",
-        })
-        localStorage.setItem("user", JSON.stringify(user))
-        navigate("/")
-      }
-      else{
-        Swal.fire({
-          title: "Error",
-          text: "Usuario o contraseña incorrectos",
-          icon: "error",
-          confirmButtonText: "Aceptar",
-        })
-      }
-    } catch (error){
+      loginUsuario({email, password})
+    } catch (error) {
       console.log(error)
     }
-
   }
 
 

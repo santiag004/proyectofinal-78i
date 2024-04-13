@@ -12,7 +12,7 @@ const ServiceContext = ({ children }) => {
 
     try {
       let response = await axios.post(
-        "http://localhost:8000/services",
+        "http://localhost:8000/api/services/add",
         service
       );
       setServices([...service, response.data]);
@@ -24,7 +24,7 @@ const ServiceContext = ({ children }) => {
   // Función para traer servicios
   const getService = async () => {
     try {
-      let response = await axios.get("http://localhost:8000/services");
+      let response = await axios.get("http://localhost:8000/api/services");
       setServices(response.data);
     } catch (e) {
       console.log(e);
@@ -34,7 +34,7 @@ const ServiceContext = ({ children }) => {
 // Función para editar un servicio
 const upDateService = async (service) => {
   try {
-    await axios.put(`http://localhost:8000/services/${service.id}`, service);
+    await axios.patch(`http://localhost:8000/api/services/${service.id}`, service);
     await getService();
   } catch (error) {
     console.log(error);
@@ -45,7 +45,7 @@ const upDateService = async (service) => {
   // Función para eliminar un servicio
   const deleteService = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/services/${id}`);
+      await axios.delete(`http://localhost:8000/api/services/${id}`);
       await getService();
     } catch (e) {
       console.log(e);

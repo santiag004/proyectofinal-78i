@@ -3,6 +3,7 @@ import { serviceContextProvider } from "../../context/serviceContext/ServiceCont
 import { Button, Table, Container, Modal } from "react-bootstrap";
 import Swal from 'sweetalert2';
 import FormServise from '../formservice/FormService';
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import './users.css'
 
 function PaginationServices() {

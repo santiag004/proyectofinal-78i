@@ -10,7 +10,7 @@ const ClassesContext = ({ children }) => {
   //funcion para obtener las clases de la base de datos
   const getClasses = async () => {
     try {
-      let response = await axios.get(`http://localhost:8000/clases`); // Corregido: Esperar la respuesta
+      let response = await axios.get(`http://localhost:8000/api/classes`); // Corregido: Esperar la respuesta
       setClasses(response.data);
     } catch (error) {
       console.log(error);
@@ -20,7 +20,7 @@ const ClassesContext = ({ children }) => {
   //funcion para crear un clase
   const addClass = async (classes) => {
     try {
-      let response = await axios.post("http://localhost:8000/clases", classes);
+      let response = await axios.post("http://localhost:8000/api/classes", classes);
       setClasses([...classes, response.data]);
     } catch (error) {
       console.log(error);
@@ -30,7 +30,7 @@ const ClassesContext = ({ children }) => {
   //funcio para editar las clases
   const upDateClasses = async (classes) => {
     try {
-      await axios.put(`http://localhost:8000/clases/${classes.id}`, classes);
+      await axios.patch(`http://localhost:8000/api/classes/${classes.id}`, classes);
       await getClasses();
     } catch (error) {
       console.log(error);
@@ -40,7 +40,7 @@ const ClassesContext = ({ children }) => {
   //funcion para eliminar una clase
   const deleteClasses = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/clases/${id}`);
+      await axios.delete(`http://localhost:8000/api/classes/${id}`);
       setClasses(classes.filter((c) => c.id !== id));
     } catch (error) {
       console.log(error);
