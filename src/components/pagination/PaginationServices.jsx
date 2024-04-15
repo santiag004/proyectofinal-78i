@@ -63,7 +63,7 @@ function PaginationServices() {
             </thead>
             <tbody>
               {services.slice(startIndex, endIndex).map((s) => (
-                <tr>
+                <tr key={s._id}>
                   <td>{s.id}</td>
                   <td>
                     <img src={s.url} alt="imagen"/>

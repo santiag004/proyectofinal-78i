@@ -56,7 +56,7 @@ function PaginationClasses() {
         ) : (
           <Table striped bordered hover>
             <thead>
-              <tr>
+              <tr key={classes._id}>
                 <th>id</th>
                 <th>Detalle</th>
                 <th>Profesor/a</th>
@@ -67,7 +67,7 @@ function PaginationClasses() {
             </thead>
             <tbody>
               {classes.slice(startIndex, endIndex).map((c) => (
-                <tr>
+                <tr key={c._id}>
                   <td>{c.id}</td>
                   <td>{c.detalle}</td>
                   <td>{c.profesor}</td>

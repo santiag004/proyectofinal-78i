@@ -34,7 +34,7 @@ const ServiceContext = ({ children }) => {
 // Función para editar un servicio
 const upDateService = async (service) => {
   try {
-    await axios.patch(`http://localhost:8000/api/services/${service.id}`, service);
+    await axios.put(`http://localhost:8000/api/services/${service.id}`, service);
     await getService();
   } catch (error) {
     console.log(error);

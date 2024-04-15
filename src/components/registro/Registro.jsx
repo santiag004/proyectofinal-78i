@@ -76,7 +76,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             <Form.Label className="colorLetras">Nombre</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter name"
+              placeholder="Enter nombre"
               value={usuario.nombre}
               onChange={handleChange}
               name="nombre"
@@ -86,7 +86,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             <Form.Label className="colorLetras">Apellido</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter surname"
+              placeholder="Enter apellido"
               value={usuario.apellido}
               onChange={handleChange}
               name="apellido"

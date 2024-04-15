@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import './clases.css'
 
 const FormClases = ({ classToEdit, handleClose }) => {
-  const { addClass, upDateClasses,getClasses } = useContext(ClassesContextProvider);
+  const { addClass, upDateClasses} = useContext(ClassesContextProvider);
 
   const [clase, setClase] = useState({
     id: classToEdit ? classToEdit.id : uuidv4(),

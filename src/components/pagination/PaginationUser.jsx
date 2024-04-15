@@ -63,7 +63,7 @@ function PaginationUser() {
             </thead>
             <tbody>
               {users.slice(startIndex, endIndex).map((user) => (
-                <tr>
+                <tr key={user._id}>
                   <td>{user.id}</td>
                   <td>{user.nombre}</td>
                   <td>{user.apellido}</td>

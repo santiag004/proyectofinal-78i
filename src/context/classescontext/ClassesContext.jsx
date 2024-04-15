@@ -18,19 +18,22 @@ const ClassesContext = ({ children }) => {
   };
 
   //funcion para crear un clase
-  const addClass = async (classes) => {
-    try {
-      let response = await axios.post("http://localhost:8000/api/classes", classes);
-      setClasses([...classes, response.data]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+//funcion para crear un clase
+const addClass = async (newClassData) => {
+  console.log(newClassData);
+  try {
+    let response = await axios.post("http://localhost:8000/api/classes/add", newClassData);
+    setClasses([...classes, response.data]);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
   //funcio para editar las clases
   const upDateClasses = async (classes) => {
     try {
-      await axios.patch(`http://localhost:8000/api/classes/${classes.id}`, classes);
+      await axios.put(`http://localhost:8000/api/classes/${classes.id}`, classes);
       await getClasses();
     } catch (error) {
       console.log(error);
