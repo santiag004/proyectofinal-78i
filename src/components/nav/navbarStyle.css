@@ -1,34 +1,77 @@
-.navStyle {
-  background-color: #000000;
-  font-size: 1.2rem;
-}
-
-
-.navLink {
-  position: relative;
-  left: 20rem; 
-  color: #14ffec !important;
-  /* text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec; */
-}
-.navLink:hover {
-  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec, 0 5px 30px #14ffec;
-}
-
-.brandLogo img {
+.brandLogo  {
   display: flex;
   align-items: center;
 }
 
+.navStyle {
+  background-color: #000000;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.navLinks {
+ display: flex;
+ justify-content: center;
+ 
+}
+.navLink {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #14ffec !important;
+  margin-right: 20px;
+
+}
+
+.navLink:hover {
+  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec,
+    0 0 40px #14ffec, 0 5px 30px #14ffec;
+}
+
+
 .loginButton {
   color: #14ffec !important;
-  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec;
-  border: none; 
-  background-color: transparent; 
+  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec,
+    0 0 40px #14ffec;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
 }
 
-.loginButton:hover {
-  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec, 0 5px 30px #14ffec;
+
+.contenedor-botones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
 }
+
+
+.loginButton:hover {
+  text-shadow: 0 0 5px #14ffec, 0 0 10px #14ffec, 0 0 20px #14ffec,
+    0 0 40px #14ffec, 0 5px 30px #14ffec;
+}
+
+
+.navbar-light .navbar-toggler {
+  color: #14ffec; 
+  border-color: #14ffec; 
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 
 

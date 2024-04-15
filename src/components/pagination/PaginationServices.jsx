@@ -51,7 +51,7 @@ function PaginationServices() {
         {services.lenght === 0 ? (
           <h1>no tenes clases disponibles</h1>
         ) : (
-          <Table striped bordered hover>
+          <Table responsive striped bordered hover variant="dark">
             <thead>
               <tr>
                 <th>id</th>

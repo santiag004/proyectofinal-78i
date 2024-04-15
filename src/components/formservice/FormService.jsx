@@ -80,7 +80,7 @@ const FormService = ({ serviceToEdit, handleClose }) => {
         <h3 className="text-center py-3">Administrar Servicios</h3>
         <Form className="formulario-services" onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
-            <Form.Label>Url del servicio</Form.Label>
+            <Form.Label className="text-white">Url del servicio</Form.Label>
             <Form.Control
               type="url"
               name="url"
@@ -90,7 +90,7 @@ const FormService = ({ serviceToEdit, handleClose }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Titulo</Form.Label>
+            <Form.Label className="text-white">Titulo</Form.Label>
             <Form.Control
               type="text"
               name="titulo"
@@ -100,7 +100,7 @@ const FormService = ({ serviceToEdit, handleClose }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Descripcion</Form.Label>
+            <Form.Label className="text-white">Descripcion</Form.Label>
             <Form.Control
               type="text"
               name="descripcion"

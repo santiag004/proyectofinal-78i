@@ -6,14 +6,16 @@ const ViewAdminServices = () => {
     return (
         <>
             <h1 className='color-letras text-center py-3'>ADMINISTRACION DE SERVICIOS</h1>
-            <Container>
+            <Container style={{ display: 'flex', flexDirection: 'column', minHeight: '66vh' }}>
                 <Row>
                     <Col>
                         <FormService />
                     </Col>
+                    <Row>
                     <Col>
                         <PaginationService />
                     </Col>
+                    </Row>
                 </Row>
             </Container>
         </>

@@ -21,3 +21,33 @@
     padding: 1em;
 
 }
+
+/* @media (max-width: 768px) {
+    .user-table, .user-table thead, .user-table tbody, .user-table th, .user-table td, .user-table tr {
+      display: block;
+    }
+    .user-table thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    .user-table tr { border: 1px solid #ccc; }
+    .user-table td {
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+      text-align: right;
+    }
+    .user-table td:before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align: left;
+      font-weight: bold;
+      content: attr(data-label);
+    }
+  } */

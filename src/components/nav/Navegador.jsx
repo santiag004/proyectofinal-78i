@@ -16,47 +16,50 @@ const Navegador = () => {
   const user = JSON.parse(localStorage.getItem("user"))
 
   return (
-    <Navbar expand="lg" className="navStyle sticky-top">
+    <Navbar expand="lg" className="navStyle sticky-top bg-black">
       <Container>
         <Navbar.Brand className='brandLogo' href="#home">
           <img
             src={logo}
             width="100"
             height="90"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top brandLogo"
             alt="Logo HTMLift GYM"
           />
-
         </Navbar.Brand>
-
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link className='navLink mx-5' onClick={() => navigate('/')}>Inicio</Nav.Link>
+        <Navbar.Collapse className="justify-content-end">
+        <Nav id="basic-navbar" className='me-auto'>
             {user && user.admin ? (
-              <NavDropdown title="Admin" id="basic-nav-dropdown">
-              <NavDropdown.Item onClick={() => navigate('/admin_users')}>Usuarios</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate('/admin_classes')}>
-                Clases
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate('/admin_services')}>Servicios</NavDropdown.Item>
-            </NavDropdown>
+              <NavDropdown
+              title={<span>Admin</span>}
+                id="basic-nav-dropdown"
+                className='navLink'
+                >
+                <NavDropdown.Item onClick={() => navigate('/admin_users')}>Usuarios</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate('/admin_classes')}>
+                  Clases
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate('/admin_services')}>Servicios</NavDropdown.Item>
+              </NavDropdown>
             ) : null}
-
-            {user ? (
-              <Nav.Link className='navLink mx-5' onClick={() => navigate('/clases')}>Clases</Nav.Link>
-            ) : null}
-            <Nav.Link className='navLink mx-5' onClick={() => navigate('/contacto')}>Contacto</Nav.Link>
-            <Nav.Link className='navLink mx-5' onClick={() => navigate('/about')}>About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-
-
-        {user ? (
-          <Button className='loginButton mx-5' variant='outline-dark' onClick={() => logOut()}>Logout</Button>
-        ) : (
-          <Button className='loginButton mx-5' variant='outline-dark' onClick={() => navigate('/login')}>Login</Button>
-        )}
+          <Navbar.Collapse id="basic-navbar-nav">
+          <Nav id="basic-navbar" className="me-auto navLinks">
+            <Nav.Link className='navLink' onClick={() => navigate('/')}>Inicio</Nav.Link>
+            {user ? (
+              <Nav.Link className='navLink' onClick={() => navigate('/clases')}>Clases</Nav.Link>
+              ) : null}
+            <Nav.Link className='navLink' onClick={() => navigate('/contacto')}>Contacto</Nav.Link>
+            <Nav.Link className='navLink' onClick={() => navigate('/about')}>About</Nav.Link>
+          </Nav>
+      {user ? (
+                <Button className='loginButton' variant='outline-dark' onClick={() => logOut()}>Cerrar Sesión</Button>
+              ) : (
+                <Button className='loginButton' variant='outline-dark' onClick={() => navigate('/login')}>Iniciar Sesión</Button>
+              )}
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
