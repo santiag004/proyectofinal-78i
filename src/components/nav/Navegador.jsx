@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button, NavDropdown } from 'react-bootstrap';
 import './navbarStyle.css'
 import logo from '../../assets/logo.jpg'
 import { useNavigate } from 'react-router-dom';
@@ -34,7 +34,13 @@ const Navegador = () => {
           <Nav className="me-auto">
             <Nav.Link className='navLink mx-5' onClick={() => navigate('/')}>Inicio</Nav.Link>
             {user && user.admin ? (
-              <Nav.Link className='navLink mx-5' onClick={() => navigate('/admin')}>Admin</Nav.Link>
+              <NavDropdown title="Admin" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={() => navigate('/admin_users')}>Usuarios</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate('/admin_classes')}>
+                Clases
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate('/admin_services')}>Servicios</NavDropdown.Item>
+            </NavDropdown>
             ) : null}
 
             {user ? (
