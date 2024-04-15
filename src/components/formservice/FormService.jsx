@@ -10,7 +10,7 @@ const FormService = ({ serviceToEdit, handleClose }) => {
   const { addService, upDateService } = useContext(serviceContextProvider);
   const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
   const [service, setService] = useState({
-    id: serviceToEdit ? serviceToEdit.id : uuidv4(),
+    _id: serviceToEdit ? serviceToEdit._id : uuidv4(),
     url: serviceToEdit ? serviceToEdit.url : "",
     titulo: serviceToEdit ? serviceToEdit.titulo : "",
     descripcion: serviceToEdit ? serviceToEdit.descripcion : "",
@@ -65,7 +65,7 @@ const FormService = ({ serviceToEdit, handleClose }) => {
         addService(service);
         // Restablecer el estado del formulario después de enviar
         setService({
-          id: uuidv4(),
+          _id: uuidv4(),
           url: "",
           titulo: "",
           descripcion: "",

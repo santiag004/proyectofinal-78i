@@ -9,7 +9,7 @@ const FormClases = ({ classToEdit, handleClose }) => {
   const { addClass, upDateClasses} = useContext(ClassesContextProvider);
 
   const [clase, setClase] = useState({
-    id: classToEdit ? classToEdit.id : uuidv4(),
+    _id: classToEdit ? classToEdit._id : uuidv4(),
     detalle: classToEdit ? classToEdit.detalle : "",
     profesor: classToEdit ? classToEdit.profesor : "",
     fecha: classToEdit ? classToEdit.fecha : "",
@@ -46,7 +46,7 @@ const FormClases = ({ classToEdit, handleClose }) => {
       });
       handleClose();
       setClase({
-        id: uuidv4(),
+        _id: uuidv4(),
         detalle: "",
         profesor: "",
         fecha: "",

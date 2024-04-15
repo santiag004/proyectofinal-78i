@@ -9,7 +9,7 @@ const Registro = ({ userToEdit, handleClose }) => {
   const { addUsuario, upDateUser } = useContext(UserContextProvider);
 
   const [usuario, setUsuario] = useState({
-    id: userToEdit ? userToEdit.id : uuidv4(),
+    _id: userToEdit ? userToEdit._id : uuidv4(),
     nombre: userToEdit ? userToEdit.nombre : "",
     apellido: userToEdit ? userToEdit.apellido : "",
     email: userToEdit ? userToEdit.email : "",
@@ -43,7 +43,7 @@ const Registro = ({ userToEdit, handleClose }) => {
       handleClose();
 
       setUsuario({
-        id: uuidv4(),
+        _id: uuidv4(),
         nombre: "",
         apellido: "",
         email: "",

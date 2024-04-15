@@ -32,8 +32,9 @@ const addClass = async (newClassData) => {
 
   //funcio para editar las clases
   const upDateClasses = async (classes) => {
+    console.log(classes)
     try {
-      await axios.put(`http://localhost:8000/api/classes/${classes.id}`, classes);
+      await axios.put(`http://localhost:8000/api/classes/${classes._id}`, classes);
       await getClasses();
     } catch (error) {
       console.log(error);

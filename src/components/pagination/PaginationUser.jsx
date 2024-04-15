@@ -64,7 +64,7 @@ function PaginationUser() {
             <tbody>
               {users.slice(startIndex, endIndex).map((user) => (
                 <tr key={user._id}>
-                  <td>{user.id}</td>
+                  <td>{user._id}</td>
                   <td>{user.nombre}</td>
                   <td>{user.apellido}</td>
                   <td>{user.email}</td>
@@ -81,7 +81,7 @@ function PaginationUser() {
                     <Button
                     className="botonDelete"
                       variant="outline-danger"
-                      onClick={()=>{mostrarConfirmacion(user.id)}}>
+                      onClick={()=>{mostrarConfirmacion(user._id)}}>
                      <FaTrashAlt/> 
                     </Button>
                   </td>

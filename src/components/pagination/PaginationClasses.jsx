@@ -68,7 +68,7 @@ function PaginationClasses() {
             <tbody>
               {classes.slice(startIndex, endIndex).map((c) => (
                 <tr key={c._id}>
-                  <td>{c.id}</td>
+                  <td>{c._id}</td>
                   <td>{c.detalle}</td>
                   <td>{c.profesor}</td>
                   <td>{c.fecha}</td>
@@ -85,7 +85,7 @@ function PaginationClasses() {
                     <Button
                     className="botonDelete"
                       variant="outline-danger"
-                      onClick={() => mostrarConfirmacion(c.id)}>
+                      onClick={() => mostrarConfirmacion(c._id)}>
                       <FaTrashAlt/>
                     </Button>
                   </td>

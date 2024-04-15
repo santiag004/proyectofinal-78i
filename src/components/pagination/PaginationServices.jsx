@@ -64,7 +64,7 @@ function PaginationServices() {
             <tbody>
               {services.slice(startIndex, endIndex).map((s) => (
                 <tr key={s._id}>
-                  <td>{s.id}</td>
+                  <td>{s._id}</td>
                   <td>
                     <img src={s.url} alt="imagen"/>
                   </td>
@@ -82,7 +82,7 @@ function PaginationServices() {
                     <Button
                     className="botonDelete"
                       variant="outline-danger"
-                      onClick={() => mostrarConfirmacion(s.id)}>
+                      onClick={() => mostrarConfirmacion(s._id)}>
                      <FaTrashAlt/>
                     </Button>
                   </td>
