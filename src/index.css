@@ -5,6 +5,28 @@
 }
 
 body {
-  background-color: #212121 !important; 
+  background-color: #212121 !important;
   scroll-behavior: smooth;
+}
+
+thead th {
+  background-color: #323232 !important;
+  color: #14ffec !important;
+}
+
+tbody td {
+  background-color: #212121 !important;
+  color: #14ffec !important;
+}
+
+table {
+  border-radius: 25px !important;
+}
+
+.botonEdit {
+  margin: 2px;
+}
+
+.botonDelete {
+  margin: 2px;
 }

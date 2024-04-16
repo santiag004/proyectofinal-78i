@@ -4,7 +4,7 @@ import { Button, Table, Container, Modal } from "react-bootstrap";
 import FormClases from "../formclasses/FormClases.jsx";
 import Swal from 'sweetalert2';
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
-import './users.css'
+import './globalstyles.css'
 
 function PaginationClasses() {
   const {
@@ -50,9 +50,9 @@ function PaginationClasses() {
 
   return (
     <>
-      <Container>
-        {classes.lenght === 0 ? (
-          <h1>no tenes clases disponibles</h1>
+      <Container className="administration-container">
+        {classes.length === 0 ? (
+          <h1>No hay clases cargadas</h1>
         ) : (
           <Table striped bordered hover>
             <thead>
@@ -94,19 +94,22 @@ function PaginationClasses() {
             </tbody>
           </Table>
         )}
+        <Container className="pages-container">
         <Button
           variant="outline-success"
-          className="mx-4"
+          className="pagesButton"
           disabled={pageNumber === 0}
           onClick={() => setPageNumber(pageNumber - 1)}>
           Anterior
         </Button>
         <Button
           variant="outline-success"
+          className="pagesButton"
           disabled={endIndex >= classes.length}
           onClick={() => setPageNumber(pageNumber + 1)}>
           Siguiente
         </Button>
+        </Container>
       </Container>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

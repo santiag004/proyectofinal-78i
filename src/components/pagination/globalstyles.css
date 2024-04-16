@@ -21,3 +21,20 @@
     padding: 1em;
 
 }
+
+.administration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.modal-body {
+    background-color: #212121;
+}
+
+.modal-header {
+    background-color: #323232;
+}

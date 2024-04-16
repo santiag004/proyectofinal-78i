@@ -4,15 +4,16 @@ import { Button, Table, Container, Modal } from "react-bootstrap";
 import Registro from "../registro/Registro"
 import Swal from 'sweetalert2';
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
-import './users.css'
+import './globalstyles.css'
+import './buttonstyles.css'
 
 function PaginationUser() {
   const { users, pageNumber, setPageNumber, deleteUser } = useContext(UserContextProvider);
-  
+
   const [userToEdit, setUserToEdit] = useState(null);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  
+
   // Calcular los índices de inicio y fin de la página actual
   const startIndex = pageNumber * 10;
   const endIndex = Math.min(startIndex + 10, users.length);
@@ -37,7 +38,7 @@ function PaginationUser() {
       if (result.isConfirmed) {
         deleteUser(id);
       } else if (result.dismiss === Swal.DismissReason.cancel) {
-        
+
         console.log('Borrado cancelado');
       }
     });
@@ -46,12 +47,12 @@ function PaginationUser() {
 
   return (
     <>
-      <Container>
-        {users.lenght === 0 ? (
-          <h1>no tenes registrado nungun usuario</h1>
+      <Container className="administration-container">
+        {users.length === 0 ? (
+          <h1>No hay ningun usuario registrado</h1>
         ) : (
           <Table className="user-table" striped bordered hover>
-            <thead>
+            <thead className="table-header">
               <tr>
                 <th>id</th>
                 <th>Nombre</th>
@@ -61,7 +62,7 @@ function PaginationUser() {
                 <th>Acciones</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="table-body">
               {users.slice(startIndex, endIndex).map((user) => (
                 <tr key={user._id}>
                   <td>{user._id}</td>
@@ -75,14 +76,14 @@ function PaginationUser() {
                       className="botonEdit mx-4"
                       onClick={() => {
                         handleEdit(user);
-                      }}> <FaEdit/>
-                     
+                      }}> <FaEdit />
+
                     </Button>
                     <Button
-                    className="botonDelete"
+                      className="botonDelete"
                       variant="outline-danger"
-                      onClick={()=>{mostrarConfirmacion(user._id)}}>
-                     <FaTrashAlt/> 
+                      onClick={() => { mostrarConfirmacion(user._id) }}>
+                      <FaTrashAlt />
                     </Button>
                   </td>
                 </tr>
@@ -90,23 +91,28 @@ function PaginationUser() {
             </tbody>
           </Table>
         )}
-        <Button
-          variant="outline-success"
-          className="mx-4"
-          disabled={pageNumber === 0}
-          onClick={() => setPageNumber(pageNumber - 1)}>
-          Anterior
-        </Button>
-        <Button
-          variant="outline-success"
-          disabled={endIndex >= users.length}
-          onClick={() => setPageNumber(pageNumber + 1)}>
-          Siguiente
-        </Button>
+        <Container className="pages-container">
+          <Button
+            variant="outline-success"
+            className="pagesButton"
+            disabled={pageNumber === 0}
+            onClick={() => setPageNumber(pageNumber - 1)}>
+            Anterior
+          </Button>
+          <Button
+            variant="outline-success"
+            className="pagesButton"
+            disabled={endIndex >= users.length}
+            onClick={() => setPageNumber(pageNumber + 1)}>
+            Siguiente
+          </Button>
+        </Container>
       </Container>
       <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Usuario</Modal.Title>
+        </Modal.Header>
         <Modal.Body className="">
-          <h1 className="text-center">Editar Usuario</h1>
           <Registro userToEdit={userToEdit} handleClose={handleClose} />
         </Modal.Body>
       </Modal>

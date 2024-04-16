@@ -1,0 +1,13 @@
+.pagesButton {
+    color: white !important;
+    padding: 15px !important;
+    border: none;
+    background-color: #14ffec !important;
+    margin-left: 1rem;
+}
+
+.pages-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

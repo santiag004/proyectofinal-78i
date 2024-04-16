@@ -77,7 +77,11 @@ const FormService = ({ serviceToEdit, handleClose }) => {
   return (
     <>
       <Container>
-        <h3 className="text-center py-3">Administrar Servicios</h3>
+        {serviceToEdit ? (
+          <h3 className="text-center py-3">Insertar datos para editar</h3>
+        ) : (
+          <h3 className="text-center py-3">Administrar Servicios</h3>
+        )}
         <Form className="formulario-services" onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Url del servicio</Form.Label>
