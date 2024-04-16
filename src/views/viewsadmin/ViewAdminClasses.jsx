@@ -7,7 +7,7 @@ const ViewAdminClasses = () => {
   return (
     <>
       <h1 className='color-letras text-center py-3'>ADMINISTRACION DE CLASES</h1>
-      <Container className='administration-container'>
+      <Container style={{ display: 'flex', flexDirection: 'column', minHeight: '65vh' }}>
         <Row>
           <Col>
             <FormClases />

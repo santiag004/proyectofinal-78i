@@ -23,7 +23,7 @@ const UserTable = () => {
     {users.length === 0 ? (
       <h2>No Tenemos productos para mostrarte</h2>
     ) : (
-      <Table striped bordered hover>
+      <Table striped bordered hover variant='dark'>
         <thead>
           <tr>
             <th>#</th>

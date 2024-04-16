@@ -54,7 +54,7 @@ function PaginationClasses() {
         {classes.length === 0 ? (
           <h1>No hay clases cargadas</h1>
         ) : (
-          <Table striped bordered hover>
+          <Table responsive striped bordered hover variant="dark" className="my-3">
             <thead>
               <tr key={classes._id}>
                 <th>id</th>

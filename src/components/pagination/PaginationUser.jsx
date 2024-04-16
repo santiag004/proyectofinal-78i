@@ -51,8 +51,8 @@ function PaginationUser() {
         {users.length === 0 ? (
           <h1>No hay ningun usuario registrado</h1>
         ) : (
-          <Table className="user-table" striped bordered hover>
-            <thead className="table-header">
+          <Table responsive className="user-table" striped bordered hover variant="dark">
+            <thead>
               <tr>
                 <th>id</th>
                 <th>Nombre</th>

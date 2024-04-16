@@ -52,7 +52,7 @@ function PaginationServices() {
         {services.length === 0 ? (
           <h1>No hay servicios cargados</h1>
         ) : (
-          <Table striped bordered hover>
+          <Table responsive striped bordered hover variant="dark">
             <thead>
               <tr>
                 <th>id</th>
@@ -66,9 +66,7 @@ function PaginationServices() {
               {services.slice(startIndex, endIndex).map((s) => (
                 <tr key={s._id}>
                   <td>{s._id}</td>
-                  <td>
-                    <img src={s.url} alt="imagen"/>
-                  </td>
+                  <td>{s.url}</td>
                   <td>{s.titulo}</td>
                   <td>{s.descripcion}</td>
                   <td>
