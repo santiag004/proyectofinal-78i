@@ -8,10 +8,24 @@
 }
 
 .colorRegistro{
-    color: #0D7377;
+    color: #14ffec;
     text-decoration: none;
 }
 
+.buttonLogin {
+    background-color: #212121;
+    outline: none;
+    border: solid 1px #14FFEC;
+    padding: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.7s;
+    color: white;
+}
+
+.buttonLogin:hover {
+    background-color: #118a80;
+}
 
 @media (max-width: 765px) {
     figure{

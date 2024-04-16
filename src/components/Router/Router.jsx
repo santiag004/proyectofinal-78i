@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from '../../views/home/Home'
-import Login from '../../views/login/Login'
 import Registro from '../registro/Registro'
 import ViewAdminUsers from '../../views/viewsadmin/ViewAdminUsers'
 import ViewAdminClasses from '../../views/viewsadmin/ViewAdminClasses'
@@ -11,6 +10,7 @@ import ViewError404 from '../../views/error404/ViewError404'
 import ViewContacto from '../../views/viewcontacto/ViewContacto'
 import PaginaDetalles from '../../views/detalles/PaginaDetalles'
 import Classes from '../../views/Classes/Classes'
+import LoginView from '../../views/login/LoginView'
 
 const Router = () => {
   const userLoggeado = JSON.parse(localStorage.getItem("user"));
@@ -20,7 +20,7 @@ const Router = () => {
 
     <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginView />} />
         <Route path="/*" element={<ViewError404 />} />
         <Route path='/registro'  element={<Registro/>} />
         <Route path='/about'  element={<About/>} />
