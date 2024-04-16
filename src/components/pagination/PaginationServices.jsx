@@ -4,7 +4,8 @@ import { Button, Table, Container, Modal } from "react-bootstrap";
 import Swal from 'sweetalert2';
 import FormServise from '../formservice/FormService';
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
-import './users.css'
+import './globalstyles.css'
+import './buttonstyles.css'
 
 function PaginationServices() {
   const { services, pageNumber, setPageNumber, deleteService } = useContext(serviceContextProvider);
@@ -47,9 +48,9 @@ function PaginationServices() {
 
   return (
     <>
-      <Container>
-        {services.lenght === 0 ? (
-          <h1>no tenes clases disponibles</h1>
+      <Container className="administration-container">
+        {services.length === 0 ? (
+          <h1>No hay servicios cargados</h1>
         ) : (
           <Table striped bordered hover>
             <thead>
@@ -91,20 +92,23 @@ function PaginationServices() {
             </tbody>
           </Table>
         )}
+        <Container className="pages-container">
         <Button
-        className="mx-4"
+        className="pagesButton"
           variant="outline-success"
           disabled={pageNumber === 0}
           onClick={() => setPageNumber(pageNumber - 1)}>
           Anterior
         </Button>
         <Button
-        className=""
+        className="pagesButton"
           variant="outline-success"
           disabled={endIndex >= services.length}
           onClick={() => setPageNumber(pageNumber + 1)}>
           Siguiente
         </Button>
+        </Container>
+        
       </Container>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

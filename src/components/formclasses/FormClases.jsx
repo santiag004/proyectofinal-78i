@@ -74,7 +74,11 @@ const FormClases = ({ classToEdit, handleClose }) => {
   return (
     <>
       <Container>
-        <h3 className="text-center py-3">Administrar Clases</h3>
+        {classToEdit ? (
+          <h3 className="text-center py-3">Insertar datos para editar</h3>
+        ) : (
+          <h3 className="text-center py-3">Agregar Clases</h3>
+        )}
         <Form className="formulario-clases" onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Detalle de la clase</Form.Label>
