@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
 import '../../css/login.css'
-import img from "../../assets/img/img.jpg";
+import img from "../../assets/img/img-login.jpg";
 import {Link, useNavigate} from 'react-router-dom'
 import Swal from "sweetalert2";
 import { UserContextProvider } from "../../context/usercontext/ContextUsers";
@@ -46,38 +46,15 @@ const Login = () => {
     } 
   }, [UsuarioLogueado]);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   try {
-  //     const user = users.find((user) => user.email === email && user.password === password)
-  //     if (user){
-  //       Swal.fire({
-  //         title: "Bienvenido",
-  //         text: "Sesion iniciada con exito",
-  //         icon: "success",
-  //         confirmButtonText: "Aceptar",
-  //       })
-  //       localStorage.setItem("user", JSON.stringify(user))
-  //       navigate("/")
-  //     }
-  //     else{
-  //       Swal.fire({
-  //         title: "Error",
-  //         text: "Usuario o contraseña incorrectos",
-  //         icon: "error",
-  //         confirmButtonText: "Aceptar",
-  //       })
-  //     }
-  //   } catch (error){
-  //     console.log(error)
-  //   }
 
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     try {
       loginUsuario({email, password})
+      setTimeout(() => {
+        navigate("/")
+      }, 1700);
     } catch (error) {
       console.log(error)
     }
@@ -110,8 +87,8 @@ const Login = () => {
                 />
             </Form.Group>
 
-            <Button variant="success" type="submit">
-              Submit
+            <Button className="buttonLogin" type="submit">
+              INICIAR SESIÓN
             </Button>
             <p className="text-white my-3">¿Todavia no tienes cuenta? <Link to="/registro" onClick={registro} className="colorRegistro">Registrate</Link></p>
           </Form>

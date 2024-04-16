@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 
 const Registro = ({ userToEdit, handleClose }) => { 
-  const { addUsuario, upDateUser } = useContext(UserContextProvider);
+  const { addUsuario, upDateUser, users } = useContext(UserContextProvider);
 
   const [usuario, setUsuario] = useState({
     _id: userToEdit ? userToEdit._id : uuidv4(),
@@ -15,7 +15,7 @@ const Registro = ({ userToEdit, handleClose }) => {
     email: userToEdit ? userToEdit.email : "",
     telefono: userToEdit ? userToEdit.telefono : "",
     password: "",
-    isAdmin: false,
+    admin: userToEdit? userToEdit.admin : false,
   });
  
 
@@ -30,6 +30,36 @@ const Registro = ({ userToEdit, handleClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (
+      !usuario.nombre ||
+      !usuario.apellido ||
+      !usuario.email ||
+      !usuario.telefono ||
+      (!userToEdit && !usuario.password)
+    ) {
+      Swal.fire({
+        title: "Error",
+        text: "Por favor, completa todos los campos.",
+        icon: "error",
+        confirmButtonText: "Aceptar",
+      });
+      return; // Detener la ejecución del handleSubmit si hay campos vacíos o null
+    }
+  
+    // Comprobación de email duplicado
+    const emailExists = users.some(
+      (user) => user.email === usuario.email && user._id !== usuario._id
+    );
+    if (emailExists) {
+      Swal.fire({
+        title: "Error",
+        text: "El email ingresado ya está registrado.",
+        icon: "error",
+        confirmButtonText: "Aceptar",
+      });
+      return; // Detener la ejecución del handleSubmit si el email ya está en uso
+    }
 
     if (userToEdit) {
       upDateUser(usuario);;
@@ -47,8 +77,9 @@ const Registro = ({ userToEdit, handleClose }) => {
         nombre: "",
         apellido: "",
         email: "",
+        telefono: "",
         password: "",
-        isAdmin: false,
+        admin: false,
       });
     } else {
       addUsuario(usuario); 
@@ -63,8 +94,9 @@ const Registro = ({ userToEdit, handleClose }) => {
         nombre: "",
         apellido: "",
         email: "",
+        telefono: "",
         password: "",
-        isAdmin: false,
+        admin: false,
       });
     }
   };
@@ -100,23 +132,26 @@ const Registro = ({ userToEdit, handleClose }) => {
               value={usuario.email}
               onChange={handleChange}
               name="email"
+              disabled={userToEdit}
             />
           </Form.Group>
-  
-          {userToEdit ? (
-            <Form.Group className="mb-3">
-              <Form.Label className="colorLetras">telefono</Form.Label>
+
+          <Form.Group className="mb-3">
+              <Form.Label className="colorLetras">Telefono</Form.Label>
               <Form.Control
                 type="phone"
-                placeholder="telefono"
+                placeholder="Telefono"
                 value={usuario.telefono}
                 onChange={handleChange}
                 name="telefono"
               />
             </Form.Group>
+  
+          {userToEdit ? (
+            null
           ) : (
             <Form.Group className="mb-3">
-              <Form.Label className="colorLetras">password</Form.Label>
+              <Form.Label className="colorLetras">Contraseña</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="password"
@@ -131,19 +166,19 @@ const Registro = ({ userToEdit, handleClose }) => {
                     <Form.Check
                       type="checkbox"
                       label="Admin"
-                      checked={usuario.isAdmin}
+                      checked={usuario.admin}
                       onChange={handleChange}
-                      name="isAdmin"
+                      name="admin"
                     />
                   </Form.Group>
                 ) : null}
   
           {userToEdit ? (
-            <Button type="submit" variant="warning">
+            <Button type="submit" className="buttonLogin">
               Editar Usuario
             </Button>
           ) : (
-            <Button variant="primary" type="submit">
+            <Button className="buttonLogin" type="submit">
               Submit
             </Button>
           )}
