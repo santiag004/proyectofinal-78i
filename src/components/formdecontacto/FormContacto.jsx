@@ -1,7 +1,55 @@
 import "./styleFormContacto.css"
-
+import { useState } from "react";
+import Swal from "sweetalert2";
+import {useNavigate} from 'react-router-dom'
 
 const FormContacto = () => {
+
+    const [formCont, setFormCont] = useState({
+        Nombre: '',
+        Apellido: '',
+        email: '',
+        message: ''
+      });
+
+      const navigate = useNavigate()
+
+      const handleChange = (e) => {
+        e.preventDefault();
+        setFormCont({ ...formCont, [e.target.name]: e.target.value });
+      };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (!formCont.Nombre || !formCont.Apellido || !formCont.email || !formCont.message){
+            Swal.fire({
+                title: "Error",
+                text: "Por favor, complete todos los campos antes de enviar el formulario.",
+                icon: "error",
+                confirmButtonText: "Aceptar",
+            });
+            return;
+        }
+
+        if (!(!formCont.Nombre) || !(!formCont.Apellido) || !(!formCont.email) || !(!formCont.message)){
+            Swal.fire({
+                title: "Enviado",
+                text: "Nos contactaremos contigo en la brevedad!!",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+            });
+            setTimeout(() => {
+                navigate("/*")
+            }, 500);
+        }
+
+    }
+
+    
+
+
+
   return (
     <>
     <div className="content">
@@ -11,26 +59,26 @@ const FormContacto = () => {
         <div className="contact-wrapper animated bounceInUp">
             <div className="contact-form">
                 <h3>Escribinos</h3>
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <p>
                         <label>Nombre</label>
-                        <input type="text" name="Nombre"/>
+                        <input type="text" name="Nombre" value={formCont.Nombre} onChange={handleChange}/>
                     </p>
                     <p>
                         <label>Apellido </label>
-                        <input type="email" name="Apellido"/>
+                        <input type="text" name="Apellido" value={formCont.Apellido} onChange={handleChange}/>
                     </p>
                     <p>
                         <label>Email</label>
-                        <input type="tel" name="email"/>
+                        <input type="email" name="email" value={formCont.email} onChange={handleChange}/>
                     </p>
                     
                     <p className="block">
                        <label>Consulta</label> 
-                        <textarea name="message" rows="3"></textarea>
+                        <textarea name="message" rows="3" value={formCont.message} onChange={handleChange}></textarea>
                     </p>
                     <p className="block">
-                        <button>
+                        <button type="submit">
                             Enviar Consulta
                         </button>
                     </p>
