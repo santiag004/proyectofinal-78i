@@ -28,6 +28,10 @@ const Registro = ({ userToEdit, handleClose }) => {
     }
   };
 
+  const validatePassword = () => {
+    return !/(?=.*[A-Z])(?=.*\d).{10,}/.test(usuario.password);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -44,21 +48,17 @@ const Registro = ({ userToEdit, handleClose }) => {
         icon: "error",
         confirmButtonText: "Aceptar",
       });
-      return; // Detener la ejecución del handleSubmit si hay campos vacíos o null
+      return;
     }
-  
-    // Comprobación de email duplicado
-    const emailExists = users.some(
-      (user) => user.email === usuario.email && user._id !== usuario._id
-    );
-    if (emailExists) {
+
+    if (!userToEdit && validatePassword()) {
       Swal.fire({
         title: "Error",
-        text: "El email ingresado ya está registrado.",
+        text: "La contraseña debe contener al menos una mayúscula, un número y tener una longitud mínima de 10 caracteres.",
         icon: "error",
         confirmButtonText: "Aceptar",
       });
-      return; // Detener la ejecución del handleSubmit si el email ya está en uso
+      return;
     }
 
     if (userToEdit) {
@@ -112,6 +112,7 @@ const Registro = ({ userToEdit, handleClose }) => {
               value={usuario.nombre}
               onChange={handleChange}
               name="nombre"
+              maxLength={50}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -122,6 +123,7 @@ const Registro = ({ userToEdit, handleClose }) => {
               value={usuario.apellido}
               onChange={handleChange}
               name="apellido"
+              maxLength={50}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -133,6 +135,7 @@ const Registro = ({ userToEdit, handleClose }) => {
               onChange={handleChange}
               name="email"
               disabled={userToEdit}
+              maxLength={50}
             />
           </Form.Group>
 
@@ -158,6 +161,7 @@ const Registro = ({ userToEdit, handleClose }) => {
                 value={usuario.password}
                 onChange={handleChange}
                 name="password"
+                maxLength={30}
               />
             </Form.Group>
           )}

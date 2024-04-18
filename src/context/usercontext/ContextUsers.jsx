@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
+import Swal from "sweetalert2";
 
 export const UserContextProvider = createContext();
 
@@ -14,11 +15,21 @@ const ContextUsers = ({ children }) => {
     try{
       const response = await axios.post("http://localhost:8000/api/users/register", usuario)
       setUsers([...users, response.data])
-    } catch (error){
-      console.log(error)
+    } catch (error) {
+      // Verificar si el error se debe a un correo electrónico duplicado
+      if (error.response && error.response.status === 400 && error.response.data.message === "Error al crear usuario") {
+        // Mostrar el mensaje de error con SweetAlert si el correo electrónico ya está registrado
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'El correo electrónico ya está registrado.',
+        });
+      } else {
+        // Manejar otros errores
+        console.error('Error al registrar usuario:', error);
+      }
     }
-  } 
-
+  };
   // Función para traer usuarios
   const getUsers = async () => {
     try {
@@ -72,7 +83,16 @@ const ContextUsers = ({ children }) => {
 
       setUsuarioLogueado(decoded);
     } catch (error) {
-      console.log(error);
+      if (error.response && error.response.status === 400) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Credenciales incorrectas',
+          text: 'Usuario y/o contraseña incorrectos',
+          confirmButtonText: 'Aceptar'
+        });
+      } else {
+        console.log(error);
+      }
     }
   };
 

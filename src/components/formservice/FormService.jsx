@@ -91,6 +91,7 @@ const FormService = ({ serviceToEdit, handleClose }) => {
               value={service.url}
               onChange={handleChange}
               placeholder="Url"
+              maxLength={80}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -101,6 +102,7 @@ const FormService = ({ serviceToEdit, handleClose }) => {
               value={service.titulo}
               onChange={handleChange}
               placeholder="Titulo"
+              maxLength={30}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -111,6 +113,7 @@ const FormService = ({ serviceToEdit, handleClose }) => {
               value={service.descripcion}
               onChange={handleChange}
               placeholder="descripcion"
+              maxLength={40}
             />
           </Form.Group>
           {serviceToEdit ? (
