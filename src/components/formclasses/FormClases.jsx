@@ -87,7 +87,8 @@ const FormClases = ({ classToEdit, handleClose }) => {
               name="detalle"
               value={clase.detalle}
               onChange={handleChange}
-              placeholder="detalle"
+              placeholder="Detalle"
+              maxLength={20}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -98,6 +99,7 @@ const FormClases = ({ classToEdit, handleClose }) => {
               value={clase.profesor}
               onChange={handleChange}
               placeholder="Profesor"
+              maxLength={40}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

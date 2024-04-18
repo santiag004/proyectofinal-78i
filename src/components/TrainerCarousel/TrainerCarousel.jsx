@@ -12,13 +12,13 @@ const TrainerCarousel = () => {
                         <Container className="cards-container">
                             <Row className="cards-row">
                                 <Col className="mx-5" lg={3} md={12}>
-                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=1" trainerName="TEST1"/>
+                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=1" trainerName="FACUNDO COLIDIO"/>
                                 </Col>
                                 <Col className="mx-5" lg={3} md={12}>
-                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=2" trainerName="TEST2"/>
+                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=2" trainerName="HERNÁN LOPEZ"/>
                                 </Col>
                                 <Col className="mx-4" lg={3} md={12}>
-                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=3" trainerName="TEST3"/>
+                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=3" trainerName="JULIÁN ÁLVAREZ"/>
                                 </Col>
                             </Row>
                         </Container>
@@ -28,13 +28,13 @@ const TrainerCarousel = () => {
                         <Container className="cards-container">
                             <Row className="cards-row">
                                 <Col className="mx-5" lg={3} md={12}>
-                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=4" trainerName="TEST4"/>
+                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=4" trainerName="LUCAS ALARIO"/>
                                 </Col>
                                 <Col className="mx-5" lg={3} md={12}>
-                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=5" trainerName="TEST5"/>
+                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=5" trainerName="DANIEL ZABALA"/>
                                 </Col>
                                 <Col className="mx-4" lg={3} md={12}>
-                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=6" trainerName="TEST6"/>
+                                    <TrainerCard profilePhoto="https://picsum.photos/150/150?random=6" trainerName="RODRIGO VILLAGRA"/>
                                 </Col>
                             </Row>
                         </Container>

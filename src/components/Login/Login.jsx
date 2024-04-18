@@ -43,6 +43,9 @@ const Login = () => {
 
       localStorage.setItem("user", JSON.stringify(usuario));
       
+      setTimeout(() => {
+        navigate("/")
+      }, 1700);
     } 
   }, [UsuarioLogueado]);
 
@@ -50,11 +53,19 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (!email || !password) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Campos incompletos',
+        text: 'Por favor completa ambos campos.',
+        confirmButtonText: 'Aceptar'
+      });
+      return;
+    }
+
     try {
       loginUsuario({email, password})
-      setTimeout(() => {
-        navigate("/")
-      }, 1700);
     } catch (error) {
       console.log(error)
     }
@@ -74,6 +85,7 @@ const Login = () => {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                maxLength={50}
               />
             </Form.Group>
 
@@ -84,6 +96,7 @@ const Login = () => {
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                maxLength={30}
                 />
             </Form.Group>
 
