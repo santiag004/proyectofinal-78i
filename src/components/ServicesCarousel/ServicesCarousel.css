@@ -1,0 +1,9 @@
+.services-img img {
+    border-radius: 15px;
+    width: 23rem;
+}
+
+.services-img {
+    margin-top: auto;
+    margin-bottom: auto;
+}

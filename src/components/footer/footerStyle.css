@@ -1,0 +1,27 @@
+.contenedorFooter {
+  background-color: #000;
+  font-size: 1.1rem;
+  color: #14ffec;
+  padding-left: 0 !important;
+  padding-top: 25px;
+  padding-right: 0 !important;
+  margin: 0;
+  max-width: 100% !important;
+}
+
+.listaSocials {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.icono-blanco {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.icono-blanco:hover {
+  color: #14ffec;
+  text-shadow: 0 5px 10px #14ffec, 0 10px 20px #14ffec, 0 15px 30px #14ffec,
+    0 20px 40px #14ffec;
+}

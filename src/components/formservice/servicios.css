@@ -1,0 +1,33 @@
+.formulario-services {
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background-color: #323232;
+}
+
+.formulario-services label {
+    color: white;
+}
+
+.formulario-services label:focus {
+    color: #14FFEC;
+}
+
+.formulario-services input {
+    border: none;
+}
+
+.formulario-services button {
+    background-color: #212121;
+    outline: none;
+    border: solid 1px #14FFEC;
+    padding: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.7s;
+    color: white;
+}
+
+.formulario-services button:hover {
+    background-color: #0b7c73;
+}
