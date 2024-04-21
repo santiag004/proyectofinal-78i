@@ -10,24 +10,24 @@ const About = () => {
             <Container className="aboutcards-container">
                 <Row>
                     <Col lg={4} md={12} className="d-flex align-items-center justify-content-center">
-                    <AboutCards name='Bruno Pieruzzi' phUrl='public\images\bp.jpg' />
+                    <AboutCards name='Bruno Pieruzzi' phUrl='\images\bp.jpg' />
                     </Col>
 
                     <Col lg={4} md={12} className="d-flex align-items-center justify-content-center">
-                    <AboutCards name='Facundo Arebalo' phUrl='public\images\fa.jpg' />
+                    <AboutCards name='Facundo Arebalo' phUrl='\images\fa.jpg' />
                     </Col>
 
                     <Col lg={4} md={12} className="d-flex align-items-center justify-content-center">
-                    <AboutCards name='Inés Toledo' phUrl='public\images\it.jpg' />
+                    <AboutCards name='Inés Toledo' phUrl='\images\it.jpg' />
                         
                     </Col>
 
                     <Col lg={6} md={12} className="d-flex align-items-center justify-content-center">
-                        <AboutCards name='Javier Rodriguez' phUrl='public\images\jr.jpg' />
+                        <AboutCards name='Javier Rodriguez' phUrl='\images\jr.jpg' />
                     </Col>
 
                     <Col lg={6} md={12} className="d-flex align-items-center justify-content-center">
-                    <AboutCards name='Santiago Soraire' phUrl="public\images\ss.jpg" />
+                    <AboutCards name='Santiago Soraire' phUrl="\images\ss.jpg" />
                         
                     </Col>
                 </Row>
