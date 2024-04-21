@@ -8,6 +8,10 @@ Descripción breve del proyecto: HTMLift GYM es una aplicación web diseñada es
 
 - **Clases:** Administra información relacionada con clases, incluyendo horarios, disponibilidad y reservas.
 
+## USUARIO DE PRUEBA DE ADMIN
+
+- **EMAIL:** admin@admin.com
+- **CONTRASEÑA:** admin
 
 ## Tecnologías Utilizadas
 
