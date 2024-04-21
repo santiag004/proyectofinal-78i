@@ -10,7 +10,7 @@ const ClassesContext = ({ children }) => {
   //funcion para obtener las clases de la base de datos
   const getClasses = async () => {
     try {
-      let response = await axios.get(`http://localhost:8000/api/classes`); // Corregido: Esperar la respuesta
+      let response = await axios.get(`https://htmlift-backend.onrender.com/api/classes`); // Corregido: Esperar la respuesta
       setClasses(response.data);
     } catch (error) {
       console.log(error);
@@ -22,7 +22,7 @@ const ClassesContext = ({ children }) => {
 const addClass = async (newClassData) => {
   console.log(newClassData);
   try {
-    let response = await axios.post("http://localhost:8000/api/classes/add", newClassData);
+    let response = await axios.post("https://htmlift-backend.onrender.com/api/classes/add", newClassData);
     setClasses([...classes, response.data]);
   } catch (error) {
     console.log(error);
@@ -34,7 +34,7 @@ const addClass = async (newClassData) => {
   const upDateClasses = async (classes) => {
     console.log(classes)
     try {
-      await axios.put(`http://localhost:8000/api/classes/${classes._id}`, classes);
+      await axios.put(`https://htmlift-backend.onrender.com/api/classes/${classes._id}`, classes);
       await getClasses();
     } catch (error) {
       console.log(error);
@@ -44,7 +44,7 @@ const addClass = async (newClassData) => {
   //funcion para eliminar una clase
   const deleteClasses = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/classes/${id}`);
+      await axios.delete(`https://htmlift-backend.onrender.com/api/classes/${id}`);
       setClasses(classes.filter((c) => c.id !== id));
     } catch (error) {
       console.log(error);

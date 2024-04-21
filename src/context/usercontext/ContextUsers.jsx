@@ -13,7 +13,7 @@ const ContextUsers = ({ children }) => {
 
   const addUsuario = async (usuario) => {
     try{
-      const response = await axios.post("http://localhost:8000/api/users/register", usuario)
+      const response = await axios.post("https://htmlift-backend.onrender.com/api/users/register", usuario)
       setUsers([...users, response.data])
     } catch (error) {
       // Verificar si el error se debe a un correo electrónico duplicado
@@ -33,7 +33,7 @@ const ContextUsers = ({ children }) => {
   // Función para traer usuarios
   const getUsers = async () => {
     try {
-      let response = await axios.get("http://localhost:8000/api/users");
+      let response = await axios.get("https://htmlift-backend.onrender.com/api/users");
       setUsers(response.data);
     } catch (e) {
       console.log(e);
@@ -43,7 +43,7 @@ const ContextUsers = ({ children }) => {
   // Función para editar un usuario
   const upDateUser = async (users) => {
     try {
-      await axios.put(`http://localhost:8000/api/user/${users._id}`, users);
+      await axios.put(`https://htmlift-backend.onrender.com/api/user/${users._id}`, users);
       await getUsers();
     } catch (error) {
       console.log(error);
@@ -53,7 +53,7 @@ const ContextUsers = ({ children }) => {
   // Función para eliminar un usuario
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/user/${id}`);
+      await axios.delete(`https://htmlift-backend.onrender.com/api/user/${id}`);
       await getUsers();
     } catch (e) {
       console.log(e);
@@ -73,7 +73,7 @@ const ContextUsers = ({ children }) => {
   const loginUsuario = async (usuario) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/user/login",
+        "https://htmlift-backend.onrender.com/api/user/login",
         usuario
       );
 
