@@ -1,2 +1,2 @@
 # proyectofinal-78i
-Proyecto final comision 78i - ReactJS
+Proyecto final Comision 78i - ReactJS
