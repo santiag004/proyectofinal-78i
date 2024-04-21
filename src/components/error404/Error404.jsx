@@ -1,5 +1,5 @@
 import "./styleError404.css"
-import errorimg from "../../assets/img/404log.jpg"
+import errorimg from "../../assets/404log.jpg"
 
 const Error404 = () => {
   return (
