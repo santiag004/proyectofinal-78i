@@ -18,9 +18,9 @@ const Footer = () => {
                         </Col>
                         <Col sm={12} md={6}>
                             <ul className='listaSocials d-flex justify-content-center'>
-                                <a className='mx-5 mt-4' href="https://facebook.com"><FontAwesomeIcon icon={faFacebookF} size="2x" className="icono-blanco" /></a>
-                                <a className='mx-5 mt-4' href="https://instagram.com"><FontAwesomeIcon icon={faInstagram} size="2x" className="icono-blanco" /></a>
-                                <a className='mx-5 mt-4' href="https://twitter.com"><FontAwesomeIcon icon={faTwitter} size="2x" className="icono-blanco" /></a>
+                                <a className='mx-5 mt-4' target='_blank' href="https://facebook.com"><FontAwesomeIcon icon={faFacebookF} size="2x" className="icono-blanco" /></a>
+                                <a className='mx-5 mt-4' target='_blank' href="https://instagram.com"><FontAwesomeIcon icon={faInstagram} size="2x" className="icono-blanco" /></a>
+                                <a className='mx-5 mt-4' target='_blank' href="https://twitter.com"><FontAwesomeIcon icon={faTwitter} size="2x" className="icono-blanco" /></a>
                             </ul>
                         </Col>
                     </Row>
