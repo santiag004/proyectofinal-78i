@@ -5,13 +5,13 @@ const Carrusel = () => {
     <>
     <Carousel fade>
       <Carousel.Item interval={2000}>
-        <img src="public\images\home\banners\ban1.jpg" className="img-fluid"/>
+        <img src="\images\home\banners\ban1.jpg" className="img-fluid"/>
       </Carousel.Item>
       <Carousel.Item interval={2000}>
-      <img src="public\images\home\banners\ban2.jpg" className="img-fluid"/>
+      <img src="\images\home\banners\ban2.jpg" className="img-fluid"/>
       </Carousel.Item>
       <Carousel.Item interval={2000}>
-      <img src="public\images\home\banners\ban3.jpg" className="img-fluid"/>
+      <img src="\images\home\banners\ban3.jpg" className="img-fluid"/>
       </Carousel.Item>
     </Carousel>
     </>
