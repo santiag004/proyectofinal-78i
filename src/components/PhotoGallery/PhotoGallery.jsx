@@ -8,7 +8,7 @@ const PhotoGallery = () => {
     return (
         <>
             <Container className="photos-container">
-                <h1 className="title">ALGUNAS FOTOS DE NUESTRO GIMNASIO</h1>
+                <h1 className="title">NOTICIAS DE NUESTROS SERVICIOS</h1>
                 {services.length === 0 ? (
                     <h1 className="title">No hay fotos cargadas para mostrar</h1>
                 ) : (
