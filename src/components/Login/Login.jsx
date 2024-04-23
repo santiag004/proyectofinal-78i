@@ -81,7 +81,7 @@ const Login = () => {
             <Form.Group className="mb-3">
               <Form.Label className="colorPalabras">Correo Electrónico</Form.Label>
               <Form.Control type="email"
-                placeholder="Enter email"
+                placeholder="ejemplo@gmail.com"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -92,7 +92,7 @@ const Login = () => {
             <Form.Group className="mb-3 ">
               <Form.Label className="colorPalabras">Contraseña</Form.Label>
               <Form.Control type="password"
-                placeholder="Password"
+                placeholder="Ingrese la contraseña"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

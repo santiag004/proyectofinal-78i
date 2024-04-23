@@ -108,7 +108,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             <Form.Label className="colorLetras">Nombre</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter nombre"
+              placeholder="Nombre"
               value={usuario.nombre}
               onChange={handleChange}
               name="nombre"
@@ -119,7 +119,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             <Form.Label className="colorLetras">Apellido</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter apellido"
+              placeholder="Apellido"
               value={usuario.apellido}
               onChange={handleChange}
               name="apellido"
@@ -130,7 +130,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             <Form.Label className="colorLetras">Email</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Enter email"
+              placeholder="ejemplo@gmail.com"
               value={usuario.email}
               onChange={handleChange}
               name="email"
@@ -157,7 +157,7 @@ const Registro = ({ userToEdit, handleClose }) => {
               <Form.Label className="colorLetras">Contraseña</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="password"
+                placeholder="Debe contener 10 caracteres, una mayuscula y un número"
                 value={usuario.password}
                 onChange={handleChange}
                 name="password"
@@ -183,7 +183,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             </Button>
           ) : (
             <Button className="buttonLogin" type="submit">
-              Submit
+              Registrarse
             </Button>
           )}
         </Form>
