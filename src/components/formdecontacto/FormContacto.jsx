@@ -62,20 +62,20 @@ const FormContacto = () => {
                 <form onSubmit={handleSubmit}>
                     <p>
                         <label>Nombre</label>
-                        <input type="text" name="Nombre" value={formCont.Nombre} onChange={handleChange}/>
+                        <input type="text" name="Nombre" value={formCont.Nombre} onChange={handleChange} required maxLength="25" pattern="[A-Za-z ]+"/>
                     </p>
                     <p>
                         <label>Apellido </label>
-                        <input type="text" name="Apellido" value={formCont.Apellido} onChange={handleChange}/>
+                        <input type="text" name="Apellido" value={formCont.Apellido} onChange={handleChange} required maxLength="25" pattern="[A-Za-z ]+"/>
                     </p>
                     <p>
                         <label>Email</label>
-                        <input type="email" name="email" value={formCont.email} onChange={handleChange}/>
+                        <input type="email" name="email" value={formCont.email} onChange={handleChange} required maxLength="30"/>
                     </p>
                     
                     <p className="block">
                        <label>Consulta</label> 
-                        <textarea name="message" rows="3" value={formCont.message} onChange={handleChange}></textarea>
+                        <textarea name="message" rows="3" value={formCont.message} onChange={handleChange} maxLength="300"></textarea>
                     </p>
                     <p className="block">
                         <button type="submit">
