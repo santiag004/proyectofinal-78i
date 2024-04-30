@@ -39,6 +39,7 @@ const Login = () => {
         nombre: UsuarioLogueado.nombre,
         apellido: UsuarioLogueado.apellido,
         admin: UsuarioLogueado.admin,
+        isSuspended: UsuarioLogueado.isSuspended
       };
 
       localStorage.setItem("user", JSON.stringify(usuario));

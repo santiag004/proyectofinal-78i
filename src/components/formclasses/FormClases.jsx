@@ -3,10 +3,11 @@ import { ClassesContextProvider } from "../../context/classescontext/ClassesCont
 import { Form, Button, Container } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
-import './clases.css'
+import "./clases.css";
 
 const FormClases = ({ classToEdit, handleClose }) => {
-  const { addClass, upDateClasses} = useContext(ClassesContextProvider);
+  const { addClass, upDateClasses } = useContext(ClassesContextProvider);
+  const fechaActual = new Date().toISOString().split("T")[0];
 
   const [clase, setClase] = useState({
     _id: classToEdit ? classToEdit._id : uuidv4(),
@@ -23,7 +24,7 @@ const FormClases = ({ classToEdit, handleClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Verificar si algún campo está vacío
     if (!clase.detalle || !clase.profesor || !clase.fecha || !clase.hora) {
       Swal.fire({
@@ -34,7 +35,7 @@ const FormClases = ({ classToEdit, handleClose }) => {
       });
       return; // Salir de la función sin enviar el formulario
     }
-  
+
     if (classToEdit) {
       upDateClasses(clase);
       Swal.fire({
@@ -51,7 +52,7 @@ const FormClases = ({ classToEdit, handleClose }) => {
         profesor: "",
         fecha: "",
         hora: "",
-      })
+      });
     } else {
       Swal.fire({
         title: "Registro Exitoso",
@@ -69,7 +70,6 @@ const FormClases = ({ classToEdit, handleClose }) => {
       });
     }
   };
-
 
   return (
     <>
@@ -105,11 +105,12 @@ const FormClases = ({ classToEdit, handleClose }) => {
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Fecha</Form.Label>
             <Form.Control
-              type="date"
-              name="fecha"
-              value={clase.fecha}
-              onChange={handleChange}
-              placeholder="Fecha"
+               type="date"
+               name="fecha"
+               value={clase.fecha}
+               onChange={handleChange}
+               min={fechaActual}
+               placeholder="Fecha"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

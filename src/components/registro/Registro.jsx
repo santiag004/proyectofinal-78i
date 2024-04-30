@@ -16,6 +16,7 @@ const Registro = ({ userToEdit, handleClose }) => {
     telefono: userToEdit ? userToEdit.telefono : "",
     password: "",
     admin: userToEdit? userToEdit.admin : false,
+    isSuspended : userToEdit ? userToEdit.isSuspended : false,
   });
  
 
@@ -80,6 +81,7 @@ const Registro = ({ userToEdit, handleClose }) => {
         telefono: "",
         password: "",
         admin: false,
+        isSuspended: false,
       });
     } else {
       addUsuario(usuario); 
@@ -97,6 +99,7 @@ const Registro = ({ userToEdit, handleClose }) => {
         telefono: "",
         password: "",
         admin: false,
+        isSuspended: false,
       });
     }
   };
