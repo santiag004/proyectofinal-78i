@@ -6,18 +6,35 @@ import Swal from 'sweetalert2';
 
 const Detalles = () => {
 
+
   const [nombre, setNombre] = useState(' ')
   const [email, setEmail] = useState(' ')
   const [telefono, setTelefono] = useState(' ')
   const [consulta, setConsulta] = useState(' ')
 
-  const enviarEmail = async (e) => {
-    e.preventDefault();
-    try {
-      emailjs.init("ezXhsZos_l1IZzd5w")
+    const enviarEmail = async (e) => { 
+        e.preventDefault();
+        try {
+          emailjs.init("ezXhsZos_l1IZzd5w")
+          
+          const result = await emailjs.sendForm('service_bxoj5ea', 'template_wco04c8', e.target);
+          
+          Swal.fire({
+              icon: 'success',
+              title: '¡Mensaje enviado con éxito!',
+              showConfirmButton: false,
+              timer: 1500
+          });
+      } catch (error) {
+          
+          Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Error al enviar el mensaje, intenta de nuevo.',
+          });
+      }
+    }
 
-      const result = await emailjs.sendForm('service_bxoj5ea', 'template_wco04c8', e.target);
-      console.log(result, "resultado enviar");
 
       Swal.fire({
         icon: 'success',
