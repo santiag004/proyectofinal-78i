@@ -35,7 +35,7 @@ const Login = () => {
           position: "center",
           icon: "warning",
           title: "Tu cuenta esta suspendida",
-          text: "pudes comunicarte con el administrador, desde el apartado de contacto.",
+          text: "Puedes comunicarte con el administrador, desde el apartado de contacto.",
           confirmButtonText: "ACEPTAR",
         });
       } else {
