@@ -2,44 +2,52 @@ import { React, useContext, useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
-import '../../css/login.css'
+import "../../css/login.css";
 import img from "../../assets/img/img-login.jpg";
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from "sweetalert2";
 import { UserContextProvider } from "../../context/usercontext/ContextUsers";
 
-
 const Login = () => {
+  const navigate = useNavigate();
 
-
-  const navigate = useNavigate()
-
-  const { users, UsuarioLogueado, loginUsuario, setIsLogginIn, IsLogginIn } = useContext(UserContextProvider)
+  const { users, UsuarioLogueado, loginUsuario, setIsLogginIn, IsLogginIn } =
+    useContext(UserContextProvider);
 
 
   const registro = (e) => {
-    navigate('/registro')
-  }
+    navigate("/registro");
+  };
 
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     if (UsuarioLogueado) {
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Bienvenido",
-        text: "Sesión iniciada con éxito",
-        confirmButtonText: "ACEPTAR"
-      });
-
       const usuario = {
         nombre: UsuarioLogueado.nombre,
         apellido: UsuarioLogueado.apellido,
         admin: UsuarioLogueado.admin,
+        isSuspended: UsuarioLogueado.isSuspended,
       };
+
+      if (usuario.isSuspended) {
+        Swal.fire({
+          position: "center",
+          icon: "warning",
+          title: "Tu cuenta esta suspendida",
+          text: "Puedes comunicarte con el administrador, desde el apartado de contacto.",
+          confirmButtonText: "ACEPTAR",
+        });
+      } else {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Bienvenido",
+          text: "Sesión iniciada con éxito",
+          confirmButtonText: "ACEPTAR",
+        });
 
       setIsLogginIn(false)
       localStorage.setItem("user", JSON.stringify(usuario));
@@ -47,10 +55,9 @@ const Login = () => {
       setTimeout(() => {
         navigate("/")
       }, 1700);
+
     }
   }, [UsuarioLogueado]);
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -59,21 +66,19 @@ const Login = () => {
     if (!email || !password) {
       setIsLogginIn(false)
       Swal.fire({
-        icon: 'error',
-        title: 'Campos incompletos',
-        text: 'Por favor completa ambos campos.',
-        confirmButtonText: 'Aceptar'
+        icon: "error",
+        title: "Campos incompletos",
+        text: "Por favor completa ambos campos.",
+        confirmButtonText: "Aceptar",
       });
       return;
     }
-
     try {
       loginUsuario({ email, password })
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-
+  };
 
   return (
     <div className="colorFondo">

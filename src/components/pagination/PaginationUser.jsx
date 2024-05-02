@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import { UserContextProvider } from "../../context/usercontext/ContextUsers";
 import { Button, Table, Container, Modal } from "react-bootstrap";
-import Registro from "../registro/Registro"
-import Swal from 'sweetalert2';
+import Registro from "../registro/Registro";
+import Swal from "sweetalert2";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
-import './globalstyles.css'
-import './buttonstyles.css'
+import "./globalstyles.css";
+import "./buttonstyles.css";
 
 function PaginationUser() {
   const { users, pageNumber, setPageNumber, deleteUser } = useContext(UserContextProvider);
@@ -26,24 +26,22 @@ function PaginationUser() {
 
   const mostrarConfirmacion = (id) => {
     Swal.fire({
-      title: '¿Estás seguro que quieres borrar este usuario?',
+      title: "¿Estás seguro que quieres borrar este usuario?",
       text: "¡No podrás revertir esto!",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí, borrarlo',
-      cancelButtonText: 'Cancelar'
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, borrarlo",
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         deleteUser(id);
       } else if (result.dismiss === Swal.DismissReason.cancel) {
-
-        console.log('Borrado cancelado');
+        console.log("Borrado cancelado");
       }
     });
   };
-
 
   return (
     <>
@@ -51,10 +49,15 @@ function PaginationUser() {
         {users.length === 0 ? (
           <h1>No hay ningun usuario registrado</h1>
         ) : (
-          <Table responsive className="user-table" striped bordered hover variant="dark">
+          <Table
+            responsive
+            className="user-table"
+            striped
+            bordered
+            hover
+            variant="dark">
             <thead>
               <tr>
-                <th>id</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
@@ -63,31 +66,34 @@ function PaginationUser() {
               </tr>
             </thead>
             <tbody className="table-body">
-              {users.slice(startIndex, endIndex).map((user) => (
-                <tr key={user._id}>
-                  <td>{user._id}</td>
-                  <td>{user.nombre}</td>
-                  <td>{user.apellido}</td>
-                  <td>{user.email}</td>
-                  <td>{user.telefono}</td>
-                  <td>
-                    <Button
-                      variant="outline-primary"
-                      className="botonEdit mx-4"
-                      onClick={() => {
-                        handleEdit(user);
-                      }}> <FaEdit />
-
-                    </Button>
-                    <Button
-                      className="botonDelete"
-                      variant="outline-danger"
-                      onClick={() => { mostrarConfirmacion(user._id) }}>
-                      <FaTrashAlt />
-                    </Button>
-                  </td>
-                </tr>
-              ))}
+              {users.slice(startIndex, endIndex).map(
+                (user) => user.admin !== true && (
+                    <tr key={user._id}>
+                      <td>{user.nombre}</td>
+                      <td>{user.apellido}</td>
+                      <td>{user.email}</td>
+                      <td>{user.telefono}</td>
+                      <td>
+                        <Button
+                          variant="outline-primary"
+                          className="botonEdit mx-4"
+                          onClick={() => {
+                            handleEdit(user);
+                          }}>
+                          <FaEdit />
+                        </Button>
+                        <Button
+                          className="botonDelete"
+                          variant="outline-danger"
+                          onClick={() => {
+                            mostrarConfirmacion(user._id);
+                          }}>
+                          <FaTrashAlt />
+                        </Button>
+                      </td>
+                    </tr>
+                  )
+              )}
             </tbody>
           </Table>
         )}

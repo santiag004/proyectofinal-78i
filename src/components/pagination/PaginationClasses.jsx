@@ -57,7 +57,7 @@ function PaginationClasses() {
           <Table responsive striped bordered hover variant="dark" className="my-3">
             <thead>
               <tr key={classes._id}>
-                <th>id</th>
+
                 <th>Detalle</th>
                 <th>Profesor/a</th>
                 <th>Fecha</th>
@@ -68,7 +68,7 @@ function PaginationClasses() {
             <tbody>
               {classes.slice(startIndex, endIndex).map((c) => (
                 <tr key={c._id}>
-                  <td>{c._id}</td>
+
                   <td>{c.detalle}</td>
                   <td>{c.profesor}</td>
                   <td>{c.fecha}</td>
