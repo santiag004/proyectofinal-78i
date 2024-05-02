@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 
-const Registro = ({ userToEdit, handleClose }) => { 
+const Registro = ({ userToEdit, handleClose }) => {
   const { addUsuario, upDateUser, users } = useContext(UserContextProvider);
 
   const [usuario, setUsuario] = useState({
@@ -15,10 +15,9 @@ const Registro = ({ userToEdit, handleClose }) => {
     email: userToEdit ? userToEdit.email : "",
     telefono: userToEdit ? userToEdit.telefono : "",
     password: "",
-    admin: userToEdit? userToEdit.admin : false,
-    isSuspended : userToEdit ? userToEdit.isSuspended : false,
+    admin: userToEdit ? userToEdit.admin : false,
+    isSuspended: userToEdit ? userToEdit.isSuspended : false,
   });
- 
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -63,7 +62,7 @@ const Registro = ({ userToEdit, handleClose }) => {
     }
 
     if (userToEdit) {
-      upDateUser(usuario);;
+      upDateUser(usuario);
       Swal.fire({
         title: "Usuario Editado",
         text: "Usuario editado con exito",
@@ -84,7 +83,7 @@ const Registro = ({ userToEdit, handleClose }) => {
         isSuspended: false,
       });
     } else {
-      addUsuario(usuario); 
+      addUsuario(usuario);
       Swal.fire({
         title: "Registro Exitoso",
         text: "Usuario registrado con exito",
@@ -106,91 +105,102 @@ const Registro = ({ userToEdit, handleClose }) => {
 
   return (
     <div className="colorFondo d-flex justify-content-center align-items-center">
-        <Form onSubmit={handleSubmit} style={{ maxWidth: "400px", width: "100%" }}>
-          <Form.Group className="mb-3">
-            <Form.Label className="colorLetras">Nombre</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Nombre"
-              value={usuario.nombre}
-              onChange={handleChange}
-              name="nombre"
-              maxLength={50}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label className="colorLetras">Apellido</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Apellido"
-              value={usuario.apellido}
-              onChange={handleChange}
-              name="apellido"
-              maxLength={50}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label className="colorLetras">Email</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="ejemplo@gmail.com"
-              value={usuario.email}
-              onChange={handleChange}
-              name="email"
-              disabled={userToEdit}
-              maxLength={50}
-            />
-          </Form.Group>
+      <Form
+        onSubmit={handleSubmit}
+        style={{ maxWidth: "400px", width: "100%" }}>
+        <Form.Group className="mb-3">
+          <Form.Label className="colorLetras">Nombre</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Nombre"
+            value={usuario.nombre}
+            onChange={handleChange}
+            name="nombre"
+            maxLength={50}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label className="colorLetras">Apellido</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Apellido"
+            value={usuario.apellido}
+            onChange={handleChange}
+            name="apellido"
+            maxLength={50}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label className="colorLetras">Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="ejemplo@gmail.com"
+            value={usuario.email}
+            onChange={handleChange}
+            name="email"
+            disabled={userToEdit}
+            maxLength={50}
+          />
+        </Form.Group>
 
+        <Form.Group className="mb-3">
+          <Form.Label className="colorLetras">Telefono</Form.Label>
+          <Form.Control
+            type="phone"
+            placeholder="Telefono"
+            value={usuario.telefono}
+            onChange={handleChange}
+            name="telefono"
+          />
+        </Form.Group>
+
+        {userToEdit ? null : (
           <Form.Group className="mb-3">
-              <Form.Label className="colorLetras">Telefono</Form.Label>
-              <Form.Control
-                type="phone"
-                placeholder="Telefono"
-                value={usuario.telefono}
-                onChange={handleChange}
-                name="telefono"
-              />
-            </Form.Group>
-  
-          {userToEdit ? (
-            null
-          ) : (
-            <Form.Group className="mb-3">
-              <Form.Label className="colorLetras">Contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Debe contener 10 caracteres, una mayuscula y un número"
-                value={usuario.password}
-                onChange={handleChange}
-                name="password"
-                maxLength={30}
-              />
-            </Form.Group>
-          )}
-          {userToEdit ? (
-                  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check
-                      type="checkbox"
-                      label="Admin"
-                      checked={usuario.admin}
-                      onChange={handleChange}
-                      name="admin"
-                    />
-                  </Form.Group>
-                ) : null}
-  
-          {userToEdit ? (
-            <Button type="submit" className="buttonLogin">
-              Editar Usuario
-            </Button>
-          ) : (
-            <Button className="buttonLogin" type="submit">
-              Registrarse
-            </Button>
-          )}
-        </Form>
+            <Form.Label className="colorLetras">Contraseña</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Debe contener 10 caracteres, una mayuscula y un número"
+              value={usuario.password}
+              onChange={handleChange}
+              name="password"
+              maxLength={30}
+            />
+          </Form.Group>
+        )}
+        {userToEdit ? (
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check
+              type="checkbox"
+              label="Admin"
+              checked={usuario.admin}
+              onChange={handleChange}
+              name="admin"
+            />
+          </Form.Group>
+        ) : null}
+        {userToEdit ? (
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check
+              type="checkbox"
+              label="Suspender"
+              checked={usuario.isSuspended}
+              onChange={handleChange}
+              name="isSuspended"
+            />
+          </Form.Group>
+        ) : null}
+
+        {userToEdit ? (
+          <Button type="submit" className="buttonLogin">
+            Editar Usuario
+          </Button>
+        ) : (
+          <Button className="buttonLogin" type="submit">
+            Registrarse
+          </Button>
+        )}
+      </Form>
     </div>
-  )
-}
+  );
+};
 export default Registro;
