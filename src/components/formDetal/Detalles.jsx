@@ -12,7 +12,6 @@ const Detalles = () => {
           emailjs.init("ezXhsZos_l1IZzd5w")
           
           const result = await emailjs.sendForm('service_bxoj5ea', 'template_wco04c8', e.target);
-          console.log(result, "resultado enviar");
           
           Swal.fire({
               icon: 'success',
