@@ -2,8 +2,16 @@
   background-color: #000;
   color: #14ffec;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px #14ffec, 0 0 20px #14ffec, 0 0 40px #14ffec;
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 20px;
+}
+
+.formularioDetalles {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background-color: #000000;
+  width: 50%;
 }
 
 .form-control {
