@@ -10,6 +10,7 @@ const ContextUsers = ({ children }) => {
   const [pageNumber, setPageNumber] = useState(0);
 
   const [UsuarioLogueado, setUsuarioLogueado] = useState()
+  const [IsLogginIn, setIsLogginIn] = useState(false)
 
   const addUsuario = async (usuario) => {
     try{
@@ -84,6 +85,7 @@ const ContextUsers = ({ children }) => {
       setUsuarioLogueado(decoded);
     } catch (error) {
       if (error.response && error.response.status === 400) {
+        setIsLogginIn(false)
         Swal.fire({
           icon: 'error',
           title: 'Credenciales incorrectas',
@@ -111,7 +113,9 @@ const ContextUsers = ({ children }) => {
         addUsuario,
         logOut,
         UsuarioLogueado,
-        loginUsuario
+        loginUsuario,
+        IsLogginIn,
+        setIsLogginIn
       }}>
       {children}
     </UserContextProvider.Provider>
