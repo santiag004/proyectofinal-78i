@@ -12,42 +12,25 @@ const Detalles = () => {
   const [telefono, setTelefono] = useState(' ')
   const [consulta, setConsulta] = useState(' ')
 
-    const enviarEmail = async (e) => { 
-        e.preventDefault();
-        try {
-          emailjs.init("ezXhsZos_l1IZzd5w")
-          
-          const result = await emailjs.sendForm('service_bxoj5ea', 'template_wco04c8', e.target);
-          
-          Swal.fire({
-              icon: 'success',
-              title: '¡Mensaje enviado con éxito!',
-              showConfirmButton: false,
-              timer: 1500
-          });
-      } catch (error) {
-          
-          Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Error al enviar el mensaje, intenta de nuevo.',
-          });
-      }
-    }
-
-
+  const enviarEmail = async (e) => { 
+    e.preventDefault();
+    try {
+      emailjs.init("ezXhsZos_l1IZzd5w");
+      
+      const result = await emailjs.sendForm('service_bxoj5ea', 'template_wco04c8', e.target);
+      
       Swal.fire({
         icon: 'success',
         title: '¡Mensaje enviado con éxito!',
         showConfirmButton: false,
         timer: 1500
       });
-      setNombre('')
-      setEmail('')
-      setTelefono('')
-      setConsulta('')
+  
+      setNombre('');
+      setEmail('');
+      setTelefono('');
+      setConsulta('');
     } catch (error) {
-
       Swal.fire({
         icon: 'error',
         title: 'Oops...',

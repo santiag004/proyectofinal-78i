@@ -19,7 +19,6 @@ const Login = () => {
     navigate("/registro");
   };
 
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -31,8 +30,9 @@ const Login = () => {
         admin: UsuarioLogueado.admin,
         isSuspended: UsuarioLogueado.isSuspended,
       };
-
+  
       if (usuario.isSuspended) {
+        setIsLogginIn(false)
         Swal.fire({
           position: "center",
           icon: "warning",
@@ -48,14 +48,14 @@ const Login = () => {
           text: "Sesión iniciada con éxito",
           confirmButtonText: "ACEPTAR",
         });
-
-      setIsLogginIn(false)
-      localStorage.setItem("user", JSON.stringify(usuario));
-
-      setTimeout(() => {
-        navigate("/")
-      }, 1700);
-
+  
+        setIsLogginIn(false);
+        localStorage.setItem("user", JSON.stringify(usuario));
+  
+        setTimeout(() => {
+          navigate("/");
+        }, 1700);
+      }
     }
   }, [UsuarioLogueado]);
 
