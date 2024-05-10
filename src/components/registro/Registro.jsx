@@ -154,7 +154,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             value={usuario.telefono}
             onChange={handleChange}
             name="telefono"
-            maxLength={18}
+            maxLength={12}
             pattern="^[0-9]+"
           />
         </Form.Group>
