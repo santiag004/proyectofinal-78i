@@ -116,7 +116,8 @@ const Registro = ({ userToEdit, handleClose }) => {
             value={usuario.nombre}
             onChange={handleChange}
             name="nombre"
-            maxLength={50}
+            maxLength="25" 
+            pattern="[A-Za-z ]+"
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -127,7 +128,8 @@ const Registro = ({ userToEdit, handleClose }) => {
             value={usuario.apellido}
             onChange={handleChange}
             name="apellido"
-            maxLength={50}
+            maxLength="25" 
+            pattern="[A-Za-z ]+"
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -139,6 +141,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             onChange={handleChange}
             name="email"
             disabled={userToEdit}
+            required
             maxLength={50}
           />
         </Form.Group>
@@ -151,6 +154,8 @@ const Registro = ({ userToEdit, handleClose }) => {
             value={usuario.telefono}
             onChange={handleChange}
             name="telefono"
+            maxLength={18}
+            pattern="^[0-9]+"
           />
         </Form.Group>
 
