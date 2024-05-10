@@ -116,6 +116,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             value={usuario.nombre}
             onChange={handleChange}
             name="nombre"
+            minLength={6}
             maxLength="25" 
             pattern="[A-Za-z ]+"
           />
@@ -128,6 +129,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             value={usuario.apellido}
             onChange={handleChange}
             name="apellido"
+            minLength={6}
             maxLength="25" 
             pattern="[A-Za-z ]+"
           />
