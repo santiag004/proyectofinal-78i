@@ -154,6 +154,7 @@ const Registro = ({ userToEdit, handleClose }) => {
             value={usuario.telefono}
             onChange={handleChange}
             name="telefono"
+            minLength={9}
             maxLength={12}
             pattern="^[0-9]+"
           />
